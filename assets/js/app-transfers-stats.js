@@ -254,6 +254,52 @@ function confirmarPromocao() {
   mostrarToast(`${j.primeiroNome} promovido ao Profissional!`);
 }
 
+window.abrirModalRenovar = function(i) {
+  if (typeof consolidarEdicoes === 'function') consolidarEdicoes();
+  const j = getSeason().jogadores[i];
+  if (!j) return;
+  $('#modal-renovar-idx').value = i;
+  $('#modal-renovar-nome').innerHTML = `${j.primeiroNome} <span style="color:#fbbf24;">${j.sobrenome}</span>`;
+  let aVal = Math.max(1, Math.min(5, parseInt(j.contAnos) || 3));
+  $('#modal-renovar-anos').value = String(aVal);
+  $('#modal-renovar-meses').value = j.contMeses || 0;
+  $('#modal-renovar-salario').value = j.salario || 0;
+  $('#modal-renovar-multa').value = j.multa || 0;
+  $('#modal-renovar').style.display = 'flex';
+};
+
+window.fecharModalRenovar = function() {
+  $('#modal-renovar').style.display = 'none';
+};
+
+window.confirmarRenovacao = function() {
+  const idx = $('#modal-renovar-idx').value;
+  if (idx === '') return;
+  const j = getSeason().jogadores[+idx];
+  if (!j) return;
+
+  const novosAnos = parseInt($('#modal-renovar-anos').value) || 1;
+  const novosMeses = parseInt($('#modal-renovar-meses').value) || 0;
+  const novoSalario = parseInt($('#modal-renovar-salario').value) || 0;
+  const novaMulta = parseInt($('#modal-renovar-multa').value) || 0;
+
+  j.contAnos = novosAnos;
+  j.contMeses = novosMeses;
+  j.salario = novoSalario;
+  j.multa = novaMulta;
+
+  if (j.status === 'Fim de Contrato') {
+    j.status = 'Reserva';
+  }
+
+  salvarDados();
+  fecharModalRenovar();
+  renderizar();
+  if (typeof mostrarToast === 'function') {
+    mostrarToast(`Contrato de ${j.primeiroNome} ${j.sobrenome} renovado para ${j.contAnos}a ${j.contMeses}m!`);
+  }
+};
+
 function renderizarAbaHistorico() {
   const e = appData.elencos[appData.indiceAtivo];
   let topHtml = `<div style="max-width:800px;margin:0 auto;padding:20px;"><h2 style="color:#fbbf24;text-align:center;border-bottom:2px solid #2d3748;padding-bottom:10px;margin-bottom:20px;">Histórico <button onclick="abrirLivroCaixa()" style="float:right;background:#10b981;color:#fff;border:none;padding:5px 10px;border-radius:5px;font-size:0.6em;cursor:pointer;margin-top:5px;text-transform:uppercase;letter-spacing:1px;box-shadow:0 2px 4px rgba(0,0,0,.5)">📓 Livro-Caixa</button></h2>`;
