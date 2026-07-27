@@ -256,35 +256,41 @@ function confirmarPromocao() {
 
 window.abrirModalRenovar = function(i) {
   if (typeof consolidarEdicoes === 'function') consolidarEdicoes();
-  const j = getSeason().jogadores[i];
+  const s = getSeason();
+  let j = (s.jogadores && s.jogadores[i]) || (s.mercado && s.mercado[i]);
+  if (!j) {
+    const all = [...(s.jogadores || []), ...(s.mercado || [])];
+    j = all[i];
+  }
   if (!j) return;
+
+  window._jogadorRenovando = j;
   $('#modal-renovar-idx').value = i;
   $('#modal-renovar-nome').innerHTML = `${j.primeiroNome} <span style="color:#fbbf24;">${j.sobrenome}</span>`;
-  let aVal = Math.max(1, Math.min(5, parseInt(j.contAnos) || 3));
-  $('#modal-renovar-anos').value = String(aVal);
-  $('#modal-renovar-meses').value = j.contMeses || 0;
+  const infoEl = $('#modal-renovar-info');
+  if (infoEl) infoEl.innerHTML = `Contrato Atual: <b>${j.contAnos || 0}a ${j.contMeses || 0}m</b>`;
+  $('#modal-renovar-anos').value = '1';
   $('#modal-renovar-salario').value = j.salario || 0;
   $('#modal-renovar-multa').value = j.multa || 0;
   $('#modal-renovar').style.display = 'flex';
 };
 
 window.fecharModalRenovar = function() {
+  window._jogadorRenovando = null;
   $('#modal-renovar').style.display = 'none';
 };
 
 window.confirmarRenovacao = function() {
   const idx = $('#modal-renovar-idx').value;
-  if (idx === '') return;
-  const j = getSeason().jogadores[+idx];
+  const s = getSeason();
+  let j = window._jogadorRenovando || (s.jogadores && s.jogadores[+idx]) || (s.mercado && s.mercado[+idx]);
   if (!j) return;
 
-  const novosAnos = parseInt($('#modal-renovar-anos').value) || 1;
-  const novosMeses = parseInt($('#modal-renovar-meses').value) || 0;
+  const anosAdicionais = parseInt($('#modal-renovar-anos').value) || 1;
   const novoSalario = parseInt($('#modal-renovar-salario').value) || 0;
   const novaMulta = parseInt($('#modal-renovar-multa').value) || 0;
 
-  j.contAnos = novosAnos;
-  j.contMeses = novosMeses;
+  j.contAnos = (parseInt(j.contAnos) || 0) + anosAdicionais;
   j.salario = novoSalario;
   j.multa = novaMulta;
 
@@ -296,7 +302,7 @@ window.confirmarRenovacao = function() {
   fecharModalRenovar();
   renderizar();
   if (typeof mostrarToast === 'function') {
-    mostrarToast(`Contrato de ${j.primeiroNome} ${j.sobrenome} renovado para ${j.contAnos}a ${j.contMeses}m!`);
+    mostrarToast(`Contrato de ${j.primeiroNome} ${j.sobrenome} renovado por +${anosAdicionais} ano(s)! Total: ${j.contAnos}a ${j.contMeses || 0}m.`);
   }
 };
 
