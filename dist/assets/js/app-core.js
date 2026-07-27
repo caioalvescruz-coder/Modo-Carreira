@@ -320,11 +320,24 @@ function carregarDados() {
       t.lineup = t.lineup || {};
       t.dataAtual =
         t.dataAtual ||
-        (t.calendario[0] ? t.calendario[0].data : `${new Date().getFullYear()}-08-01`);
+        (t.calendario[0] ? t.calendario[0].data : '2025-07-01');
       t.inbox = t.inbox || [];
       t.livroCaixa = t.livroCaixa || [];
       t.activePromises = t.activePromises || [];
       t.shortlist = t.shortlist || [];
+
+      if (!t.migracaoContratos2025) {
+        t.migracaoContratos2025 = true;
+        [t.jogadores, t.mercado].forEach((lista) => {
+          if (lista) {
+            lista.forEach((j) => {
+              if (j && j.contAnos !== undefined && j.contAnos !== null) {
+                j.contAnos = (parseInt(j.contAnos) || 0) + 1;
+              }
+            });
+          }
+        });
+      }
     });
   });
   return d;
@@ -427,7 +440,7 @@ const addDays = (d, n) => {
 
 function renderTimeline() {
   const s = getSeason();
-  if (!s.dataAtual) s.dataAtual = `${anoAtualCal}-08-01`;
+  if (!s.dataAtual) s.dataAtual = '2025-07-01';
   let h = '';
   for (let i = -1; i <= 5; i++) {
     let d = addDays(s.dataAtual, i),
@@ -983,7 +996,7 @@ window.toPlayerFromUniversalDB = function (data) {
     let match = data.team_contract.match(/(\d{4})\s*~\s*(\d{4})/);
     if (match) {
       let endYear = parseInt(match[2]);
-      contAnos = Math.max(0, endYear - 2026);
+      contAnos = Math.max(0, endYear - 2025);
     } else if (data.team_contract.toLowerCase().includes('emprestado')) {
       // Emprestado handle (could be mapped if needed)
       contAnos = 1;

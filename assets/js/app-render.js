@@ -1201,6 +1201,7 @@ window.iniciarNovaCarreira = async function() {
     jogadores: [],
     mercado: [],
     calendario: [],
+    dataAtual: '2025-07-01',
     verba: 100000000,
     salario: 500000
   };
