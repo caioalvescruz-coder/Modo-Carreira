@@ -1,0 +1,1432 @@
+
+> manager-fc-career-workspace@1.0.0 lint
+> eslint assets/js
+
+
+C:\Users\larao\Desktop\Modo Carreira EA FC\assets\js\app-calendar.js
+    1:7    warning  'dragCal' is assigned a value but never used             no-unused-vars
+    2:7    warning  'allowDropCal' is assigned a value but never used        no-unused-vars
+    3:7    warning  'dropCal' is assigned a value but never used             no-unused-vars
+    7:15   warning  'getSeason' is not defined                               no-undef
+   10:7    warning  'salvarDados' is not defined                             no-undef
+   11:7    warning  'renderizar' is not defined                              no-undef
+   16:7    warning  'abrirModalEvento' is assigned a value but never used    no-unused-vars
+   17:13   warning  'getSeason' is not defined                               no-undef
+   21:13   warning  'getCompC' is not defined                                no-undef
+   50:15   warning  'getSeason' is not defined                               no-undef
+   57:7    warning  'mostrarToast' is not defined                            no-undef
+   79:5    warning  'salvarDados' is not defined                             no-undef
+   81:5    warning  'renderizar' is not defined                              no-undef
+   82:5    warning  'mostrarToast' is not defined                            no-undef
+   85:5    warning  'mostrarToast' is not defined                            no-undef
+   93:7    warning  'getSeason' is not defined                               no-undef
+   93:32   warning  'getSeason' is not defined                               no-undef
+   94:7    warning  'salvarDados' is not defined                             no-undef
+   96:7    warning  'renderizar' is not defined                              no-undef
+   97:7    warning  'mostrarToast' is not defined                            no-undef
+  101:5    warning  'mostrarToast' is not defined                            no-undef
+  106:13   warning  'getSeason' is not defined                               no-undef
+  126:3    warning  'renderRelatorio' is not defined                         no-undef
+  131:3    warning  'renderRelatorio' is not defined                         no-undef
+  141:3    warning  'renderRelatorio' is not defined                         no-undef
+  146:3    warning  'renderRelatorio' is not defined                         no-undef
+  150:13   warning  'getSeason' is not defined                               no-undef
+  173:13   warning  'getSeason' is not defined                               no-undef
+  190:20   warning  'reverterRelatorio' is not defined                       no-undef
+  216:7    warning  'addNotif' is not defined                                no-undef
+  237:5    warning  'addNotif' is not defined                                no-undef
+  242:5    warning  'addNotif' is not defined                                no-undef
+  246:3    warning  'salvarDados' is not defined                             no-undef
+  248:3    warning  'renderizar' is not defined                              no-undef
+  252:13   warning  'getSeason' is not defined                               no-undef
+  267:13   warning  'getSeason' is not defined                               no-undef
+  306:7    warning  'reverterRelatorio' is not defined                       no-undef
+  309:7    warning  'salvarDados' is not defined                             no-undef
+  311:7    warning  'renderizar' is not defined                              no-undef
+  317:10   warning  'renderizarCalendario' is defined but never used         no-unused-vars
+  318:13   warning  'getSeason' is not defined                               no-undef
+  334:23   warning  'anoAtualCal' is not defined                             no-undef
+  334:36   warning  'mesAtualCal' is not defined                             no-undef
+  335:20   warning  'anoAtualCal' is not defined                             no-undef
+  335:33   warning  'mesAtualCal' is not defined                             no-undef
+  337:5    warning  'getCompC' is not defined                                no-undef
+  339:15   warning  'c' is defined but never used                            no-unused-vars
+  339:22   warning  'gBd' is not defined                                     no-undef
+  341:120  warning  'mesAtualCal' is not defined                             no-undef
+  341:136  warning  'anoAtualCal' is not defined                             no-undef
+  342:7    warning  'calModoLista' is not defined                            no-undef
+  351:484  warning  'gBd' is not defined                                     no-undef
+  360:19   warning  'anoAtualCal' is not defined                             no-undef
+  360:41   warning  'mesAtualCal' is not defined                             no-undef
+  361:36   warning  'mesAtualCal' is not defined                             no-undef
+  375:415  warning  'gBd' is not defined                                     no-undef
+  383:7    warning  'visualizarSnapshot' is assigned a value but never used  no-unused-vars
+  384:3    warning  'snapshotVisualizando' is not defined                    no-undef
+  385:3    warning  'renderizar' is not defined                              no-undef
+  387:7    warning  'fecharSnapshot' is assigned a value but never used      no-unused-vars
+  388:3    warning  'snapshotVisualizando' is not defined                    no-undef
+  389:3    warning  'renderizar' is not defined                              no-undef
+  391:7    warning  'excluirSnapshot' is assigned a value but never used     no-unused-vars
+  393:5    warning  'appData' is not defined                                 no-undef
+  393:21   warning  'appData' is not defined                                 no-undef
+  394:9    warning  'snapshotVisualizando' is not defined                    no-undef
+  394:37   warning  'snapshotVisualizando' is not defined                    no-undef
+  395:5    warning  'salvarDados' is not defined                             no-undef
+  396:5    warning  'renderizar' is not defined                              no-undef
+  399:7    warning  'mudarAbaSnapshot' is assigned a value but never used    no-unused-vars
+  400:3    warning  'snapshotAbaSelecionada' is not defined                  no-undef
+  401:3    warning  'renderizar' is not defined                              no-undef
+
+C:\Users\larao\Desktop\Modo Carreira EA FC\assets\js\app-core.js
+    10:3   warning  'paginaAtual' is assigned a value but never used                no-unused-vars
+    12:3   warning  'selCards' is assigned a value but never used                   no-unused-vars
+    24:3   warning  'sortDir' is assigned a value but never used                    no-unused-vars
+    25:3   warning  'modoTabela' is assigned a value but never used                 no-unused-vars
+    26:3   warning  'sortTaticasField' is assigned a value but never used           no-unused-vars
+    27:3   warning  'sortTaticasDir' is assigned a value but never used             no-unused-vars
+    28:3   warning  'filtroRenovacaoAtivo' is assigned a value but never used       no-unused-vars
+    29:3   warning  'snapshotVisualizando' is assigned a value but never used       no-unused-vars
+    30:3   warning  'snapshotAbaSelecionada' is assigned a value but never used     no-unused-vars
+    31:3   warning  'mesAtualCal' is assigned a value but never used                no-unused-vars
+    33:3   warning  'calModoLista' is assigned a value but never used               no-unused-vars
+    34:3   warning  'imgUploadIdx' is assigned a value but never used               no-unused-vars
+    35:5   warning  'compsSelecionadas' is assigned a value but never used          no-unused-vars
+    36:3   warning  'sortStatsField' is assigned a value but never used             no-unused-vars
+    37:3   warning  'sortStatsDir' is assigned a value but never used               no-unused-vars
+    38:3   warning  'editComp' is assigned a value but never used                   no-unused-vars
+    42:7   warning  'cSit' is assigned a value but never used                       no-unused-vars
+    76:10  warning  'salvarCompeticao' is defined but never used                    no-unused-vars
+    81:3   warning  'renderizar' is not defined                                     no-undef
+    85:10  warning  'excluirCompeticao' is defined but never used                   no-unused-vars
+    90:5   warning  'renderizar' is not defined                                     no-undef
+   106:10  warning  'abrirModalCompeticoes' is defined but never used               no-unused-vars
+   112:7   warning  'gBd' is assigned a value but never used                        no-unused-vars
+   113:7   warning  'rSt' is assigned a value but never used                        no-unused-vars
+   115:7   warning  'fZ' is assigned a value but never used                         no-unused-vars
+   116:7   warning  'getAdp' is assigned a value but never used                     no-unused-vars
+   127:7   warning  'lblSit' is assigned a value but never used                     no-unused-vars
+   133:7   warning  'lblSt' is assigned a value but never used                      no-unused-vars
+   139:7   warning  'cN' is assigned a value but never used                         no-unused-vars
+   252:13  warning  'structuredClone' is not defined                                no-undef
+   350:10  warning  'normalizarDados' is defined but never used                     no-unused-vars
+   364:7   warning  'syncCal' is assigned a value but never used                    no-unused-vars
+   374:21  warning  'Blob' is not defined                                           no-undef
+   457:10  warning  'mudarDataManager' is defined but never used                    no-unused-vars
+   523:17  warning  'renderizar' is not defined                                     no-undef
+   528:14  warning  'v' is not defined                                              no-undef
+   528:18  warning  'sv' is not defined                                             no-undef
+   529:25  warning  'v' is not defined                                              no-undef
+   539:13  error    The value assigned to 'm' is not used in subsequent statements  no-useless-assignment
+   556:3   warning  'renderizar' is not defined                                     no-undef
+   653:9   warning  'isM' is assigned a value but never used                        no-unused-vars
+   735:3   warning  'verificarEventosNarrativos' is not defined                     no-undef
+   739:10  warning  'toggleInbox' is defined but never used                         no-unused-vars
+   761:10  warning  'excluirNotificacao' is defined but never used                  no-unused-vars
+   768:10  warning  'marcarLida' is defined but never used                          no-unused-vars
+   774:10  warning  'marcarTodasLidas' is defined but never used                    no-unused-vars
+   780:10  warning  'limparNotificacoes' is defined but never used                  no-unused-vars
+   866:7   warning  'abrirUpload' is assigned a value but never used                no-unused-vars
+   877:7   warning  'mapPos' is assigned a value but never used                     no-unused-vars
+   928:42  error    Irregular whitespace not allowed                                no-irregular-whitespace
+  1124:47  warning  'renderizar' is not defined                                     no-undef
+  1146:41  warning  'renderizar' is not defined                                     no-undef
+  1163:41  warning  'renderizar' is not defined                                     no-undef
+
+C:\Users\larao\Desktop\Modo Carreira EA FC\assets\js\app-inbox-engine.js
+   32:15  warning  'getSeason' is not defined              no-undef
+   54:7   warning  'atualizarInboxVisual' is not defined   no-undef
+   61:15  warning  'getSeason' is not defined              no-undef
+   66:7   warning  'atualizarInboxVisual' is not defined   no-undef
+   67:52  warning  'renderInboxMaster' is not defined      no-undef
+   72:15  warning  'getSeason' is not defined              no-undef
+   77:7   warning  'atualizarInboxVisual' is not defined   no-undef
+   78:52  warning  'renderInboxMaster' is not defined      no-undef
+   83:15  warning  'getSeason' is not defined              no-undef
+   85:5   warning  'atualizarInboxVisual' is not defined   no-undef
+   86:50  warning  'renderInboxMaster' is not defined      no-undef
+   91:15  warning  'getSeason' is not defined              no-undef
+   97:5   warning  'salvarDados' is not defined            no-undef
+   99:44  warning  'renderPitch' is not defined            no-undef
+  103:15  warning  'getSeason' is not defined              no-undef
+  106:5   warning  'salvarDados' is not defined            no-undef
+  111:15  warning  'getSeason' is not defined              no-undef
+  120:5   warning  'salvarDados' is not defined            no-undef
+  125:15  warning  'getSeason' is not defined              no-undef
+  131:7   warning  'salvarDados' is not defined            no-undef
+  132:52  warning  'renderInboxMaster' is not defined      no-undef
+  139:11  warning  's' is assigned a value but never used  no-unused-vars
+  139:15  warning  'getSeason' is not defined              no-undef
+  153:22  warning  'getPlayer' is not defined              no-undef
+  157:9   warning  'InboxEngine' is not defined            no-undef
+  158:11  warning  'InboxEngine' is not defined            no-undef
+  166:9   warning  'InboxEngine' is not defined            no-undef
+  167:11  warning  'InboxEngine' is not defined            no-undef
+  184:15  warning  'getSeason' is not defined              no-undef
+  199:5   warning  'InboxEngine' is not defined            no-undef
+  200:7   warning  'InboxEngine' is not defined            no-undef
+  210:15  warning  'getSeason' is not defined              no-undef
+  214:17  warning  'getPlayer' is not defined              no-undef
+  216:7   warning  'InboxEngine' is not defined            no-undef
+  217:9   warning  'InboxEngine' is not defined            no-undef
+  234:13  warning  'getSeason' is not defined              no-undef
+  309:13  warning  'getSeason' is not defined              no-undef
+  314:5   warning  'InboxEngine' is not defined            no-undef
+  315:5   warning  'renderInboxMaster' is not defined      no-undef
+  316:22  warning  'abrirEmailMaster' is not defined       no-undef
+  320:5   warning  'atualizarInboxVisual' is not defined   no-undef
+  366:17  warning  'getSeason' is not defined              no-undef
+  371:9   warning  'InboxTriggers' is not defined          no-undef
+
+C:\Users\larao\Desktop\Modo Carreira EA FC\assets\js\app-render.js
+     3:9     warning  'getSeason' is not defined                              no-undef
+     4:13    warning  'appData' is not defined                                no-undef
+     4:29    warning  'appData' is not defined                                no-undef
+    14:34    warning  'appData' is not defined                                no-undef
+    17:39    warning  'appData' is not defined                                no-undef
+    27:32    warning  'modoEdicao' is not defined                             no-undef
+    32:5     warning  'abaAtiva' is not defined                               no-undef
+    33:5     warning  'abaAtiva' is not defined                               no-undef
+    34:5     warning  'abaAtiva' is not defined                               no-undef
+    35:5     warning  'abaAtiva' is not defined                               no-undef
+    36:5     warning  'abaAtiva' is not defined                               no-undef
+    37:19    warning  'abaAtiva' is not defined                               no-undef
+    38:3     warning  '$$' is not defined                                     no-undef
+    39:31    warning  'abaAtiva' is not defined                               no-undef
+    46:8     warning  'modoTabela' is not defined                             no-undef
+    46:30    warning  'abaAtiva' is not defined                               no-undef
+    47:21    warning  'modoTabela' is not defined                             no-undef
+    47:42    warning  'abaAtiva' is not defined                               no-undef
+    49:37    warning  'abaAtiva' is not defined                               no-undef
+    53:7     warning  'modoEdicao' is not defined                             no-undef
+    53:22    warning  'abaAtiva' is not defined                               no-undef
+    53:50    warning  'abaAtiva' is not defined                               no-undef
+    53:76    warning  'abaAtiva' is not defined                               no-undef
+    58:7     warning  'modoEdicao' is not defined                             no-undef
+    58:22    warning  'abaAtiva' is not defined                               no-undef
+    58:50    warning  'abaAtiva' is not defined                               no-undef
+    58:76    warning  'abaAtiva' is not defined                               no-undef
+    63:7     warning  'modoEdicao' is not defined                             no-undef
+    63:22    warning  'abaAtiva' is not defined                               no-undef
+    63:50    warning  'abaAtiva' is not defined                               no-undef
+    63:76    warning  'abaAtiva' is not defined                               no-undef
+    68:7     warning  'modoEdicao' is not defined                             no-undef
+    68:22    warning  'abaAtiva' is not defined                               no-undef
+    68:50    warning  'abaAtiva' is not defined                               no-undef
+    68:76    warning  'abaAtiva' is not defined                               no-undef
+    73:7     warning  'modoEdicao' is not defined                             no-undef
+    74:8     warning  'abaAtiva' is not defined                               no-undef
+    74:36    warning  'abaAtiva' is not defined                               no-undef
+    74:62    warning  'abaAtiva' is not defined                               no-undef
+    75:7     warning  'selCards' is not defined                               no-undef
+    78:54    warning  'selCards' is not defined                               no-undef
+    82:7     warning  'modoEdicao' is not defined                             no-undef
+    82:21    warning  'abaAtiva' is not defined                               no-undef
+    83:3     warning  '$$' is not defined                                     no-undef
+    84:31    warning  'modoEdicao' is not defined                             no-undef
+    86:3     warning  '$$' is not defined                                     no-undef
+    87:31    warning  'modoEdicao' is not defined                             no-undef
+    90:52    warning  'modoEdicao' is not defined                             no-undef
+    92:52    warning  'modoEdicao' is not defined                             no-undef
+    93:62    warning  'modoEdicao' is not defined                             no-undef
+    96:43    warning  'modoEdicao' is not defined                             no-undef
+    96:57    warning  'selCards' is not defined                               no-undef
+    97:9     warning  'selCards' is not defined                               no-undef
+    97:77    warning  'selCards' is not defined                               no-undef
+   100:3     warning  'verificarNotificacoes' is not defined                  no-undef
+   101:3     warning  'renderTimeline' is not defined                         no-undef
+   103:7     warning  'abaAtiva' is not defined                               no-undef
+   104:19    warning  'renderizarCalendario' is not defined                   no-undef
+   107:7     warning  'abaAtiva' is not defined                               no-undef
+   108:19    warning  'renderizarAbaHistorico' is not defined                 no-undef
+   111:7     warning  'abaAtiva' is not defined                               no-undef
+   112:19    warning  'renderizarTaticas' is not defined                      no-undef
+   115:7     warning  'abaAtiva' is not defined                               no-undef
+   116:19    warning  'renderizarEstatisticas' is not defined                 no-undef
+   119:7     warning  'abaAtiva' is not defined                               no-undef
+   120:5     warning  'renderInboxMaster' is not defined                      no-undef
+   128:58    warning  'filtroRenovacaoAtivo' is not defined                   no-undef
+   132:5     warning  'abaAtiva' is not defined                               no-undef
+   134:9     warning  'abaAtiva' is not defined                               no-undef
+   136:11    warning  'abaAtiva' is not defined                               no-undef
+   138:13    warning  'subAbaMercado' is not defined                          no-undef
+   142:5     warning  'abaAtiva' is not defined                               no-undef
+   154:42    warning  'filtros' is not defined                                no-undef
+   162:42    warning  'filtros' is not defined                                no-undef
+   166:7     warning  'abaAtiva' is not defined                               no-undef
+   170:30    warning  'abaAtiva' is not defined                               no-undef
+   173:46    warning  'filtros' is not defined                                no-undef
+   173:133   warning  'lblSit' is not defined                                 no-undef
+   181:42    warning  'filtros' is not defined                                no-undef
+   181:135   warning  'lblSt' is not defined                                  no-undef
+   185:52    warning  'filtros' is not defined                                no-undef
+   186:51    warning  'filtros' is not defined                                no-undef
+   187:52    warning  'filtros' is not defined                                no-undef
+   189:7     warning  'abaAtiva' is not defined                               no-undef
+   189:31    warning  'abaAtiva' is not defined                               no-undef
+   189:57    warning  'subAbaMercado' is not defined                          no-undef
+   190:55    warning  'filtros' is not defined                                no-undef
+   192:7     warning  'abaAtiva' is not defined                               no-undef
+   192:33    warning  'subAbaMercado' is not defined                          no-undef
+   194:62    warning  'buildFaixasHTML' is not defined                        no-undef
+   197:17    warning  'abaAtiva' is not defined                               no-undef
+   197:43    warning  'subAbaMercado' is not defined                          no-undef
+   199:5     warning  'abaAtiva' is not defined                               no-undef
+   201:9     warning  'abaAtiva' is not defined                               no-undef
+   202:11    warning  'subAbaMercado' is not defined                          no-undef
+   208:8     warning  'abaAtiva' is not defined                               no-undef
+   210:11    warning  'abaAtiva' is not defined                               no-undef
+   212:13    warning  'abaAtiva' is not defined                               no-undef
+   214:15    warning  'abaAtiva' is not defined                               no-undef
+   215:17    warning  'subAbaMercado' is not defined                          no-undef
+   217:19    warning  'subAbaMercado' is not defined                          no-undef
+   219:21    warning  'subAbaMercado' is not defined                          no-undef
+   223:9     warning  'filtros' is not defined                                no-undef
+   223:24    warning  'filtros' is not defined                                no-undef
+   223:71    warning  'filtros' is not defined                                no-undef
+   224:9     warning  'filtros' is not defined                                no-undef
+   224:31    warning  'filtros' is not defined                                no-undef
+   225:9     warning  'filtros' is not defined                                no-undef
+   225:31    warning  'filtros' is not defined                                no-undef
+   226:9     warning  'filtros' is not defined                                no-undef
+   226:34    warning  'filtros' is not defined                                no-undef
+   231:9     warning  'filtroRenovacaoAtivo' is not defined                   no-undef
+   232:18    warning  'filtros' is not defined                                no-undef
+   233:18    warning  'filtros' is not defined                                no-undef
+   234:16    warning  'filtros' is not defined                                no-undef
+   235:16    warning  'filtros' is not defined                                no-undef
+   236:16    warning  'filtros' is not defined                                no-undef
+   237:16    warning  'filtros' is not defined                                no-undef
+   238:18    warning  'filtros' is not defined                                no-undef
+   239:18    warning  'filtros' is not defined                                no-undef
+   260:23    warning  'sortDir' is not defined                                no-undef
+   260:62    warning  'sortDir' is not defined                                no-undef
+   263:3     warning  'renderizarDashboard' is not defined                    no-undef
+   265:26    warning  'modoTabela' is not defined                             no-undef
+   267:7     warning  'paginaAtual' is not defined                            no-undef
+   267:35    warning  'paginaAtual' is not defined                            no-undef
+   272:9     warning  'paginaAtual' is not defined                            no-undef
+   274:102   warning  'paginaAtual' is not defined                            no-undef
+   276:29    warning  'paginaAtual' is not defined                            no-undef
+   283:44    warning  'paginaAtual' is not defined                            no-undef
+   290:9     warning  'paginaAtual' is not defined                            no-undef
+   292:102   warning  'paginaAtual' is not defined                            no-undef
+   297:30    warning  'paginaAtual' is not defined                            no-undef
+   297:65    warning  'paginaAtual' is not defined                            no-undef
+   299:7     warning  'modoEdicao' is not defined                             no-undef
+   302:5     warning  'bulkHtml' is assigned a value but never used           no-unused-vars
+   304:15    warning  'selCards' is not defined                               no-undef
+   304:225   warning  'selCards' is not defined                               no-undef
+   309:7     warning  'abaAtiva' is not defined                               no-undef
+   310:75    warning  'subAbaMercado' is not defined                          no-undef
+   310:256   warning  'subAbaMercado' is not defined                          no-undef
+   313:7     warning  'modoTabela' is not defined                             no-undef
+   319:31    warning  'modoEdicao' is not defined                             no-undef
+   319:45    warning  'abaAtiva' is not defined                               no-undef
+   319:71    warning  'abaAtiva' is not defined                               no-undef
+   323:83    warning  'modoEdicao' is not defined                             no-undef
+   323:97    warning  'abaAtiva' is not defined                               no-undef
+   323:123   warning  'abaAtiva' is not defined                               no-undef
+   323:376   warning  'sortDir' is not defined                                no-undef
+   328:15    warning  'inicializarBases' is not defined                       no-undef
+   332:19    warning  'abaAtiva' is not defined                               no-undef
+   334:57    warning  'getStatusEmoji' is not defined                         no-undef
+   337:21    warning  'tblSvg' is not defined                                 no-undef
+   338:68    warning  'modoEdicao' is not defined                             no-undef
+   338:82    warning  'abaAtiva' is not defined                               no-undef
+   338:108   warning  'abaAtiva' is not defined                               no-undef
+   338:137   warning  'modoEdicao' is not defined                             no-undef
+   338:237   warning  'selCards' is not defined                               no-undef
+   338:431   warning  'abaAtiva' is not defined                               no-undef
+   338:459   warning  'abaAtiva' is not defined                               no-undef
+   338:638   warning  'abaAtiva' is not defined                               no-undef
+   338:664   warning  'subAbaMercado' is not defined                          no-undef
+   338:694   warning  'modoEdicao' is not defined                             no-undef
+   338:908   warning  'abaAtiva' is not defined                               no-undef
+   338:932   warning  'modoEdicao' is not defined                             no-undef
+   338:1365  warning  'getBg' is not defined                                  no-undef
+   338:1447  warning  'renderDeltaSpan' is not defined                        no-undef
+   338:1517  warning  'getBg' is not defined                                  no-undef
+   338:1523  warning  'abaAtiva' is not defined                               no-undef
+   338:1624  warning  'abaAtiva' is not defined                               no-undef
+   338:1673  warning  'renderDeltaSpan' is not defined                        no-undef
+   338:1723  warning  'renderDeltaSpan' is not defined                        no-undef
+   338:1774  warning  'formatMoney' is not defined                            no-undef
+   338:1806  warning  'formatMoney' is not defined                            no-undef
+   338:1838  warning  'formatMoney' is not defined                            no-undef
+   338:1957  warning  'cSit' is not defined                                   no-undef
+   351:15    warning  'inicializarBases' is not defined                       no-undef
+   359:430   warning  'renderDeltaSpan' is not defined                        no-undef
+   360:27    warning  'abaAtiva' is not defined                               no-undef
+   383:59    warning  'modoEdicao' is not defined                             no-undef
+   383:249   warning  'defSvg' is not defined                                 no-undef
+   383:258   warning  'modoEdicao' is not defined                             no-undef
+   386:180   warning  'formatMoney' is not defined                            no-undef
+   388:180   warning  'formatMoney' is not defined                            no-undef
+   389:42    warning  'modoEdicao' is not defined                             no-undef
+   389:106   warning  'selCards' is not defined                               no-undef
+   389:178   warning  'cSit' is not defined                                   no-undef
+   390:4     warning  'modoEdicao' is not defined                             no-undef
+   390:18    warning  'abaAtiva' is not defined                               no-undef
+   390:44    warning  'subAbaMercado' is not defined                          no-undef
+   391:4     warning  'modoEdicao' is not defined                             no-undef
+   391:18    warning  'abaAtiva' is not defined                               no-undef
+   394:11    warning  'modoEdicao' is not defined                             no-undef
+   398:11    warning  'modoEdicao' is not defined                             no-undef
+   401:145   warning  'modoEdicao' is not defined                             no-undef
+   401:245   warning  'selCards' is not defined                               no-undef
+   401:344   warning  'modoEdicao' is not defined                             no-undef
+   401:498   warning  'modoEdicao' is not defined                             no-undef
+   401:1053  warning  'modoEdicao' is not defined                             no-undef
+   402:18    warning  'modoEdicao' is not defined                             no-undef
+   410:21    warning  'modoEdicao' is not defined                             no-undef
+   413:81    warning  'modoEdicao' is not defined                             no-undef
+   413:260   warning  'getBg' is not defined                                  no-undef
+   413:284   warning  'modoEdicao' is not defined                             no-undef
+   413:337   warning  'renderDeltaSpan' is not defined                        no-undef
+   413:397   warning  'getBg' is not defined                                  no-undef
+   413:403   warning  'abaAtiva' is not defined                               no-undef
+   413:454   warning  'abaAtiva' is not defined                               no-undef
+   413:477   warning  'modoEdicao' is not defined                             no-undef
+   413:664   warning  'renderDeltaSpan' is not defined                        no-undef
+   413:704   warning  'modoEdicao' is not defined                             no-undef
+   413:757   warning  'renderDeltaSpan' is not defined                        no-undef
+   413:825   warning  'modoEdicao' is not defined                             no-undef
+   413:926   warning  'modoEdicao' is not defined                             no-undef
+   413:1020  warning  'modoEdicao' is not defined                             no-undef
+   413:1532  warning  'modoEdicao' is not defined                             no-undef
+   413:1981  warning  'modoEdicao' is not defined                             no-undef
+   413:2099  warning  'formatMoney' is not defined                            no-undef
+   413:2160  warning  'modoEdicao' is not defined                             no-undef
+   413:2278  warning  'formatMoney' is not defined                            no-undef
+   413:2341  warning  'modoEdicao' is not defined                             no-undef
+   413:2463  warning  'formatMoney' is not defined                            no-undef
+   413:2565  warning  'modoEdicao' is not defined                             no-undef
+   413:2732  warning  'rSt' is not defined                                    no-undef
+   413:2784  warning  'modoEdicao' is not defined                             no-undef
+   413:2951  warning  'rSt' is not defined                                    no-undef
+   413:3041  warning  'getBg' is not defined                                  no-undef
+   413:3098  warning  'modoEdicao' is not defined                             no-undef
+   413:3508  warning  'renderDeltaSpan' is not defined                        no-undef
+   413:3661  warning  'renderDeltaSpan' is not defined                        no-undef
+   419:1     warning  'syncCal' is not defined                                no-undef
+   424:32    warning  'cloneData' is not defined                              no-undef
+   424:42    warning  'appData' is not defined                                no-undef
+   425:31    warning  'STORAGE_KEY' is not defined                            no-undef
+   426:25    warning  'readStoredJSON' is not defined                         no-undef
+   427:5     warning  'currentUserId' is not defined                          no-undef
+   428:5     warning  'activeStorageKey' is not defined                       no-undef
+   429:5     warning  'appData' is not defined                                no-undef
+   429:15    warning  'normalizarDados' is not defined                        no-undef
+   430:29    warning  'STORAGE_KEY' is not defined                            no-undef
+   431:5     warning  'salvarDados' is not defined                            no-undef
+   432:5     warning  'syncCal' is not defined                                no-undef
+   434:12    warning  'cloneData' is not defined                              no-undef
+   434:22    warning  'appData' is not defined                                no-undef
+   437:45    warning  'activeStorageKey' is not defined                       no-undef
+   438:5     warning  'currentUserId' is not defined                          no-undef
+   439:5     warning  'activeStorageKey' is not defined                       no-undef
+   439:24    warning  'STORAGE_KEY' is not defined                            no-undef
+   440:29    warning  'STORAGE_KEY' is not defined                            no-undef
+   441:5     warning  'appData' is not defined                                no-undef
+   441:15    warning  'normalizarDados' is not defined                        no-undef
+   441:31    warning  'criarCarreiraInicial' is not defined                   no-undef
+   444:23    warning  'STORAGE_KEY' is not defined                            no-undef
+   450:5     warning  'appData' is not defined                                no-undef
+   450:15    warning  'normalizarDados' is not defined                        no-undef
+   451:5     warning  'salvarDados' is not defined                            no-undef
+   453:5     warning  'syncCal' is not defined                                no-undef
+   455:12    warning  'cloneData' is not defined                              no-undef
+   455:22    warning  'appData' is not defined                                no-undef
+   457:18    warning  'cloneData' is not defined                              no-undef
+   457:28    warning  'appData' is not defined                                no-undef
+   460:10    warning  'excluirSelecionados' is defined but never used         no-unused-vars
+   461:7     warning  'selCards' is not defined                               no-undef
+   464:54    warning  'selCards' is not defined                               no-undef
+   469:3     warning  'consolidarEdicoes' is not defined                      no-undef
+   471:5     warning  'abaAtiva' is not defined                               no-undef
+   472:9     warning  'subAbaMercado' is not defined                          no-undef
+   473:11    warning  'getSeason' is not defined                              no-undef
+   474:11    warning  'getSeason' is not defined                              no-undef
+   475:9     warning  'getSeason' is not defined                              no-undef
+   478:3     warning  'selCards' is not defined                               no-undef
+   480:3     warning  'selCards' is not defined                               no-undef
+   482:17    warning  'getSeason' is not defined                              no-undef
+   483:17    warning  'getSeason' is not defined                              no-undef
+   486:11    warning  's' is not defined                                      no-undef
+   489:11    warning  's' is not defined                                      no-undef
+   491:11    warning  's' is not defined                                      no-undef
+   493:11    warning  's' is not defined                                      no-undef
+   496:18    warning  's' is not defined                                      no-undef
+   502:3     warning  'selCards' is not defined                               no-undef
+   503:3     warning  'salvarDados' is not defined                            no-undef
+   507:10    warning  'excluirVisiveis' is defined but never used             no-unused-vars
+   509:9     warning  'isOut' is assigned a value but never used              no-unused-vars
+   509:17    warning  'abaAtiva' is not defined                               no-undef
+   509:43    warning  'subAbaMercado' is not defined                          no-undef
+   511:5     warning  'abaAtiva' is not defined                               no-undef
+   512:9     warning  'subAbaMercado' is not defined                          no-undef
+   513:11    warning  'getSeason' is not defined                              no-undef
+   514:11    warning  'getSeason' is not defined                              no-undef
+   515:9     warning  'getSeason' is not defined                              no-undef
+   519:8     warning  'abaAtiva' is not defined                               no-undef
+   521:11    warning  'abaAtiva' is not defined                               no-undef
+   523:13    warning  'abaAtiva' is not defined                               no-undef
+   524:15    warning  'subAbaMercado' is not defined                          no-undef
+   526:17    warning  'subAbaMercado' is not defined                          no-undef
+   528:19    warning  'subAbaMercado' is not defined                          no-undef
+   532:9     warning  'filtros' is not defined                                no-undef
+   532:24    warning  'filtros' is not defined                                no-undef
+   532:71    warning  'filtros' is not defined                                no-undef
+   533:9     warning  'filtros' is not defined                                no-undef
+   533:31    warning  'filtros' is not defined                                no-undef
+   534:9     warning  'filtros' is not defined                                no-undef
+   534:31    warning  'filtros' is not defined                                no-undef
+   535:9     warning  'filtros' is not defined                                no-undef
+   535:34    warning  'filtros' is not defined                                no-undef
+   537:9     warning  'filtroRenovacaoAtivo' is not defined                   no-undef
+   538:18    warning  'filtros' is not defined                                no-undef
+   539:18    warning  'filtros' is not defined                                no-undef
+   540:16    warning  'filtros' is not defined                                no-undef
+   541:16    warning  'filtros' is not defined                                no-undef
+   542:16    warning  'filtros' is not defined                                no-undef
+   543:16    warning  'filtros' is not defined                                no-undef
+   544:18    warning  'filtros' is not defined                                no-undef
+   545:18    warning  'filtros' is not defined                                no-undef
+   560:22    warning  'getSeason' is not defined                              no-undef
+   561:19    warning  'getSeason' is not defined                              no-undef
+   564:13    warning  's' is not defined                                      no-undef
+   567:13    warning  's' is not defined                                      no-undef
+   569:13    warning  's' is not defined                                      no-undef
+   571:13    warning  's' is not defined                                      no-undef
+   574:20    warning  's' is not defined                                      no-undef
+   580:3     warning  'selCards' is not defined                               no-undef
+   581:3     warning  'salvarDados' is not defined                            no-undef
+   585:10    warning  'debounceBusca' is defined but never used               no-unused-vars
+   588:5     warning  'consolidarEdicoes' is not defined                      no-undef
+   593:10    warning  'exportarBackup' is defined but never used              no-unused-vars
+   595:36    warning  'appData' is not defined                                no-undef
+   596:22    warning  'Blob' is not defined                                   no-undef
+   597:17    warning  'URL' is not defined                                    no-undef
+   604:5     warning  'URL' is not defined                                    no-undef
+   605:12    warning  'e' is defined but never used                           no-unused-vars
+   610:10    warning  'exportarElencoAtualJSON' is defined but never used     no-unused-vars
+   612:25    warning  'appData' is not defined                                no-undef
+   612:41    warning  'appData' is not defined                                no-undef
+   614:10    warning  'appData' is not defined                                no-undef
+   619:22    warning  'Blob' is not defined                                   no-undef
+   620:17    warning  'URL' is not defined                                    no-undef
+   628:5     warning  'URL' is not defined                                    no-undef
+   629:12    warning  'e' is defined but never used                           no-unused-vars
+   634:10    warning  'importarElencoAtualJSON' is defined but never used     no-unused-vars
+   637:22    warning  'FileReader' is not defined                             no-undef
+   648:9     warning  'appData' is not defined                                no-undef
+   648:25    warning  'appData' is not defined                                no-undef
+   649:9     warning  'appData' is not defined                                no-undef
+   652:34    warning  'appData' is not defined                                no-undef
+   653:57    warning  'atualizarStorageInfo' is not defined                   no-undef
+   655:40    warning  'appData' is not defined                                no-undef
+   657:11    warning  'salvarDados' is not defined                            no-undef
+   661:49    warning  'trocarElenco' is not defined                           no-undef
+   675:10    warning  'importarBackup' is defined but never used              no-unused-vars
+   678:22    warning  'FileReader' is not defined                             no-undef
+   702:10    warning  'verificarEventosNarrativos' is defined but never used  no-unused-vars
+   710:9     warning  'dStr' is assigned a value but never used               no-unused-vars
+   720:7     warning  'addNotif' is not defined                               no-undef
+   789:7     warning  'addNotif' is not defined                               no-undef
+   805:9     warning  'addNotif' is not defined                               no-undef
+   818:9     warning  'addNotif' is not defined                               no-undef
+   828:27    warning  'i' is defined but never used                           no-unused-vars
+   830:11    warning  'est' is assigned a value but never used                no-unused-vars
+   844:11    warning  'addNotif' is not defined                               no-undef
+   857:9     warning  'addNotif' is not defined                               no-undef
+   879:21    warning  'Image' is not defined                                  no-undef
+   908:17    warning  'appData' is not defined                                no-undef
+   934:3     warning  'salvarDados' is not defined                            no-undef
+   955:3     warning  'requestAnimationFrame' is not defined                  no-undef
+   971:8     warning  'appData' is not defined                                no-undef
+   971:27    warning  'appData' is not defined                                no-undef
+   975:17    warning  'appData' is not defined                                no-undef
+   975:33    warning  'appData' is not defined                                no-undef
+   988:3     warning  'salvarDados' is not defined                            no-undef
+   997:3     warning  'paginaAtual' is not defined                            no-undef
+  1005:13    warning  'getSeason' is not defined                              no-undef
+  1007:5     warning  'abaAtiva' is not defined                               no-undef
+  1007:31    warning  'subAbaMercado' is not defined                          no-undef
+  1023:8     warning  'abaAtiva' is not defined                               no-undef
+  1025:11    warning  'abaAtiva' is not defined                               no-undef
+  1027:13    warning  'abaAtiva' is not defined                               no-undef
+  1028:15    warning  'subAbaMercado' is not defined                          no-undef
+  1030:17    warning  'subAbaMercado' is not defined                          no-undef
+  1032:19    warning  'subAbaMercado' is not defined                          no-undef
+  1036:9     warning  'filtros' is not defined                                no-undef
+  1036:24    warning  'filtros' is not defined                                no-undef
+  1036:71    warning  'filtros' is not defined                                no-undef
+  1037:9     warning  'filtros' is not defined                                no-undef
+  1037:31    warning  'filtros' is not defined                                no-undef
+  1038:9     warning  'filtros' is not defined                                no-undef
+  1038:31    warning  'filtros' is not defined                                no-undef
+  1039:9     warning  'filtros' is not defined                                no-undef
+  1039:34    warning  'filtros' is not defined                                no-undef
+  1042:9     warning  'filtroRenovacaoAtivo' is not defined                   no-undef
+  1046:56    warning  'selCards' is not defined                               no-undef
+  1049:5     warning  'selCards' is not defined                               no-undef
+  1049:16    warning  'selCards' is not defined                               no-undef
+  1052:12    warning  'selCards' is not defined                               no-undef
+  1052:34    warning  'selCards' is not defined                               no-undef
+  1059:7     warning  'modoEdicao' is not defined                             no-undef
+  1059:21    warning  'abaAtiva' is not defined                               no-undef
+  1060:11    warning  'getSeason' is not defined                              no-undef
+
+C:\Users\larao\Desktop\Modo Carreira EA FC\assets\js\app-render_backup.js
+    3:9     warning  'getSeason' is not defined                              no-undef
+    4:13    warning  'appData' is not defined                                no-undef
+    4:29    warning  'appData' is not defined                                no-undef
+    5:34    warning  'appData' is not defined                                no-undef
+    8:39    warning  'appData' is not defined                                no-undef
+   18:32    warning  'modoEdicao' is not defined                             no-undef
+   23:5     warning  'abaAtiva' is not defined                               no-undef
+   24:5     warning  'abaAtiva' is not defined                               no-undef
+   25:5     warning  'abaAtiva' is not defined                               no-undef
+   26:5     warning  'abaAtiva' is not defined                               no-undef
+   27:19    warning  'abaAtiva' is not defined                               no-undef
+   28:3     warning  '$$' is not defined                                     no-undef
+   29:31    warning  'abaAtiva' is not defined                               no-undef
+   35:8     warning  'modoTabela' is not defined                             no-undef
+   35:30    warning  'abaAtiva' is not defined                               no-undef
+   36:21    warning  'modoTabela' is not defined                             no-undef
+   36:42    warning  'abaAtiva' is not defined                               no-undef
+   38:37    warning  'abaAtiva' is not defined                               no-undef
+   42:7     warning  'modoEdicao' is not defined                             no-undef
+   42:22    warning  'abaAtiva' is not defined                               no-undef
+   42:50    warning  'abaAtiva' is not defined                               no-undef
+   42:76    warning  'abaAtiva' is not defined                               no-undef
+   47:7     warning  'modoEdicao' is not defined                             no-undef
+   47:22    warning  'abaAtiva' is not defined                               no-undef
+   47:50    warning  'abaAtiva' is not defined                               no-undef
+   47:76    warning  'abaAtiva' is not defined                               no-undef
+   52:7     warning  'modoEdicao' is not defined                             no-undef
+   52:22    warning  'abaAtiva' is not defined                               no-undef
+   52:50    warning  'abaAtiva' is not defined                               no-undef
+   52:76    warning  'abaAtiva' is not defined                               no-undef
+   57:7     warning  'modoEdicao' is not defined                             no-undef
+   58:8     warning  'abaAtiva' is not defined                               no-undef
+   58:36    warning  'abaAtiva' is not defined                               no-undef
+   58:62    warning  'abaAtiva' is not defined                               no-undef
+   59:7     warning  'selCards' is not defined                               no-undef
+   62:54    warning  'selCards' is not defined                               no-undef
+   66:7     warning  'modoEdicao' is not defined                             no-undef
+   66:21    warning  'abaAtiva' is not defined                               no-undef
+   67:3     warning  '$$' is not defined                                     no-undef
+   68:31    warning  'modoEdicao' is not defined                             no-undef
+   70:3     warning  '$$' is not defined                                     no-undef
+   71:31    warning  'modoEdicao' is not defined                             no-undef
+   74:52    warning  'modoEdicao' is not defined                             no-undef
+   76:52    warning  'modoEdicao' is not defined                             no-undef
+   77:62    warning  'modoEdicao' is not defined                             no-undef
+   80:43    warning  'modoEdicao' is not defined                             no-undef
+   80:57    warning  'selCards' is not defined                               no-undef
+   81:9     warning  'selCards' is not defined                               no-undef
+   81:77    warning  'selCards' is not defined                               no-undef
+   84:3     warning  'verificarNotificacoes' is not defined                  no-undef
+   85:3     warning  'renderTimeline' is not defined                         no-undef
+   87:7     warning  'abaAtiva' is not defined                               no-undef
+   88:19    warning  'renderizarCalendario' is not defined                   no-undef
+   91:7     warning  'abaAtiva' is not defined                               no-undef
+   92:19    warning  'renderizarAbaHistorico' is not defined                 no-undef
+   95:7     warning  'abaAtiva' is not defined                               no-undef
+   96:19    warning  'renderizarTaticas' is not defined                      no-undef
+   99:7     warning  'abaAtiva' is not defined                               no-undef
+  100:19    warning  'renderizarEstatisticas' is not defined                 no-undef
+  108:58    warning  'filtroRenovacaoAtivo' is not defined                   no-undef
+  112:5     warning  'abaAtiva' is not defined                               no-undef
+  114:9     warning  'abaAtiva' is not defined                               no-undef
+  116:11    warning  'abaAtiva' is not defined                               no-undef
+  118:13    warning  'subAbaMercado' is not defined                          no-undef
+  122:5     warning  'abaAtiva' is not defined                               no-undef
+  134:42    warning  'filtros' is not defined                                no-undef
+  138:7     warning  'abaAtiva' is not defined                               no-undef
+  142:30    warning  'abaAtiva' is not defined                               no-undef
+  145:46    warning  'filtros' is not defined                                no-undef
+  145:126   warning  'lblSit' is not defined                                 no-undef
+  153:42    warning  'filtros' is not defined                                no-undef
+  153:128   warning  'lblSt' is not defined                                  no-undef
+  157:52    warning  'filtros' is not defined                                no-undef
+  158:52    warning  'filtros' is not defined                                no-undef
+  160:7     warning  'abaAtiva' is not defined                               no-undef
+  160:31    warning  'abaAtiva' is not defined                               no-undef
+  160:57    warning  'subAbaMercado' is not defined                          no-undef
+  161:55    warning  'filtros' is not defined                                no-undef
+  163:7     warning  'abaAtiva' is not defined                               no-undef
+  163:33    warning  'subAbaMercado' is not defined                          no-undef
+  165:62    warning  'buildFaixasHTML' is not defined                        no-undef
+  168:17    warning  'abaAtiva' is not defined                               no-undef
+  168:43    warning  'subAbaMercado' is not defined                          no-undef
+  170:5     warning  'abaAtiva' is not defined                               no-undef
+  172:9     warning  'abaAtiva' is not defined                               no-undef
+  173:11    warning  'subAbaMercado' is not defined                          no-undef
+  179:8     warning  'abaAtiva' is not defined                               no-undef
+  181:11    warning  'abaAtiva' is not defined                               no-undef
+  183:13    warning  'abaAtiva' is not defined                               no-undef
+  185:15    warning  'abaAtiva' is not defined                               no-undef
+  186:17    warning  'subAbaMercado' is not defined                          no-undef
+  188:19    warning  'subAbaMercado' is not defined                          no-undef
+  190:21    warning  'subAbaMercado' is not defined                          no-undef
+  194:9     warning  'filtros' is not defined                                no-undef
+  194:31    warning  'filtros' is not defined                                no-undef
+  195:9     warning  'filtros' is not defined                                no-undef
+  195:31    warning  'filtros' is not defined                                no-undef
+  196:9     warning  'filtros' is not defined                                no-undef
+  196:34    warning  'filtros' is not defined                                no-undef
+  201:9     warning  'filtroRenovacaoAtivo' is not defined                   no-undef
+  202:18    warning  'filtros' is not defined                                no-undef
+  203:18    warning  'filtros' is not defined                                no-undef
+  204:16    warning  'filtros' is not defined                                no-undef
+  205:16    warning  'filtros' is not defined                                no-undef
+  206:16    warning  'filtros' is not defined                                no-undef
+  207:16    warning  'filtros' is not defined                                no-undef
+  208:18    warning  'filtros' is not defined                                no-undef
+  209:18    warning  'filtros' is not defined                                no-undef
+  230:23    warning  'sortDir' is not defined                                no-undef
+  230:62    warning  'sortDir' is not defined                                no-undef
+  233:3     warning  'renderizarDashboard' is not defined                    no-undef
+  237:7     warning  'paginaAtual' is not defined                            no-undef
+  237:35    warning  'paginaAtual' is not defined                            no-undef
+  242:9     warning  'paginaAtual' is not defined                            no-undef
+  244:102   warning  'paginaAtual' is not defined                            no-undef
+  246:29    warning  'paginaAtual' is not defined                            no-undef
+  253:44    warning  'paginaAtual' is not defined                            no-undef
+  260:9     warning  'paginaAtual' is not defined                            no-undef
+  262:102   warning  'paginaAtual' is not defined                            no-undef
+  267:30    warning  'paginaAtual' is not defined                            no-undef
+  267:65    warning  'paginaAtual' is not defined                            no-undef
+  269:7     warning  'modoEdicao' is not defined                             no-undef
+  274:15    warning  'selCards' is not defined                               no-undef
+  274:225   warning  'selCards' is not defined                               no-undef
+  279:7     warning  'abaAtiva' is not defined                               no-undef
+  280:75    warning  'subAbaMercado' is not defined                          no-undef
+  280:256   warning  'subAbaMercado' is not defined                          no-undef
+  283:7     warning  'modoTabela' is not defined                             no-undef
+  289:31    warning  'modoEdicao' is not defined                             no-undef
+  289:45    warning  'abaAtiva' is not defined                               no-undef
+  289:71    warning  'abaAtiva' is not defined                               no-undef
+  294:83    warning  'modoEdicao' is not defined                             no-undef
+  294:97    warning  'abaAtiva' is not defined                               no-undef
+  294:123   warning  'abaAtiva' is not defined                               no-undef
+  294:376   warning  'sortDir' is not defined                                no-undef
+  299:15    warning  'inicializarBases' is not defined                       no-undef
+  303:19    warning  'abaAtiva' is not defined                               no-undef
+  305:57    warning  'getStatusEmoji' is not defined                         no-undef
+  308:21    warning  'tblSvg' is not defined                                 no-undef
+  309:68    warning  'modoEdicao' is not defined                             no-undef
+  309:82    warning  'abaAtiva' is not defined                               no-undef
+  309:108   warning  'abaAtiva' is not defined                               no-undef
+  309:137   warning  'modoEdicao' is not defined                             no-undef
+  309:237   warning  'selCards' is not defined                               no-undef
+  309:431   warning  'abaAtiva' is not defined                               no-undef
+  309:459   warning  'abaAtiva' is not defined                               no-undef
+  309:638   warning  'abaAtiva' is not defined                               no-undef
+  309:664   warning  'subAbaMercado' is not defined                          no-undef
+  309:694   warning  'modoEdicao' is not defined                             no-undef
+  309:908   warning  'abaAtiva' is not defined                               no-undef
+  309:932   warning  'modoEdicao' is not defined                             no-undef
+  309:1365  warning  'getBg' is not defined                                  no-undef
+  309:1447  warning  'renderDeltaSpan' is not defined                        no-undef
+  309:1517  warning  'getBg' is not defined                                  no-undef
+  309:1523  warning  'abaAtiva' is not defined                               no-undef
+  309:1624  warning  'abaAtiva' is not defined                               no-undef
+  309:1673  warning  'renderDeltaSpan' is not defined                        no-undef
+  309:1723  warning  'renderDeltaSpan' is not defined                        no-undef
+  309:1774  warning  'formatMoney' is not defined                            no-undef
+  309:1806  warning  'formatMoney' is not defined                            no-undef
+  309:1838  warning  'formatMoney' is not defined                            no-undef
+  309:1957  warning  'cSit' is not defined                                   no-undef
+  322:15    warning  'inicializarBases' is not defined                       no-undef
+  330:430   warning  'renderDeltaSpan' is not defined                        no-undef
+  331:27    warning  'abaAtiva' is not defined                               no-undef
+  354:59    warning  'modoEdicao' is not defined                             no-undef
+  354:249   warning  'defSvg' is not defined                                 no-undef
+  354:258   warning  'modoEdicao' is not defined                             no-undef
+  357:180   warning  'formatMoney' is not defined                            no-undef
+  359:180   warning  'formatMoney' is not defined                            no-undef
+  360:42    warning  'modoEdicao' is not defined                             no-undef
+  360:106   warning  'selCards' is not defined                               no-undef
+  360:178   warning  'cSit' is not defined                                   no-undef
+  361:4     warning  'modoEdicao' is not defined                             no-undef
+  361:18    warning  'abaAtiva' is not defined                               no-undef
+  361:44    warning  'subAbaMercado' is not defined                          no-undef
+  361:321   warning  'modoEdicao' is not defined                             no-undef
+  361:335   warning  'abaAtiva' is not defined                               no-undef
+  362:4     warning  'modoEdicao' is not defined                             no-undef
+  362:18    warning  'abaAtiva' is not defined                               no-undef
+  365:11    warning  'modoEdicao' is not defined                             no-undef
+  369:11    warning  'modoEdicao' is not defined                             no-undef
+  372:145   warning  'modoEdicao' is not defined                             no-undef
+  372:245   warning  'selCards' is not defined                               no-undef
+  372:344   warning  'modoEdicao' is not defined                             no-undef
+  372:498   warning  'modoEdicao' is not defined                             no-undef
+  372:1053  warning  'modoEdicao' is not defined                             no-undef
+  373:18    warning  'modoEdicao' is not defined                             no-undef
+  381:21    warning  'modoEdicao' is not defined                             no-undef
+  384:81    warning  'modoEdicao' is not defined                             no-undef
+  384:260   warning  'getBg' is not defined                                  no-undef
+  384:284   warning  'modoEdicao' is not defined                             no-undef
+  384:337   warning  'renderDeltaSpan' is not defined                        no-undef
+  384:397   warning  'getBg' is not defined                                  no-undef
+  384:403   warning  'abaAtiva' is not defined                               no-undef
+  384:454   warning  'abaAtiva' is not defined                               no-undef
+  384:477   warning  'modoEdicao' is not defined                             no-undef
+  384:664   warning  'renderDeltaSpan' is not defined                        no-undef
+  384:704   warning  'modoEdicao' is not defined                             no-undef
+  384:757   warning  'renderDeltaSpan' is not defined                        no-undef
+  384:825   warning  'modoEdicao' is not defined                             no-undef
+  384:926   warning  'modoEdicao' is not defined                             no-undef
+  384:1020  warning  'modoEdicao' is not defined                             no-undef
+  384:1571  warning  'modoEdicao' is not defined                             no-undef
+  384:1880  warning  'modoEdicao' is not defined                             no-undef
+  384:2567  warning  'modoEdicao' is not defined                             no-undef
+  384:2685  warning  'formatMoney' is not defined                            no-undef
+  384:2746  warning  'modoEdicao' is not defined                             no-undef
+  384:2864  warning  'formatMoney' is not defined                            no-undef
+  384:2927  warning  'modoEdicao' is not defined                             no-undef
+  384:3049  warning  'formatMoney' is not defined                            no-undef
+  384:3151  warning  'modoEdicao' is not defined                             no-undef
+  384:3318  warning  'rSt' is not defined                                    no-undef
+  384:3370  warning  'modoEdicao' is not defined                             no-undef
+  384:3537  warning  'rSt' is not defined                                    no-undef
+  384:3627  warning  'getBg' is not defined                                  no-undef
+  384:3684  warning  'modoEdicao' is not defined                             no-undef
+  384:4094  warning  'renderDeltaSpan' is not defined                        no-undef
+  384:4247  warning  'renderDeltaSpan' is not defined                        no-undef
+  389:1     warning  'syncCal' is not defined                                no-undef
+  394:32    warning  'cloneData' is not defined                              no-undef
+  394:42    warning  'appData' is not defined                                no-undef
+  395:31    warning  'STORAGE_KEY' is not defined                            no-undef
+  396:25    warning  'readStoredJSON' is not defined                         no-undef
+  397:5     warning  'currentUserId' is not defined                          no-undef
+  398:5     warning  'activeStorageKey' is not defined                       no-undef
+  399:5     warning  'appData' is not defined                                no-undef
+  399:15    warning  'normalizarDados' is not defined                        no-undef
+  400:29    warning  'STORAGE_KEY' is not defined                            no-undef
+  401:5     warning  'salvarDados' is not defined                            no-undef
+  402:5     warning  'syncCal' is not defined                                no-undef
+  404:12    warning  'cloneData' is not defined                              no-undef
+  404:22    warning  'appData' is not defined                                no-undef
+  407:45    warning  'activeStorageKey' is not defined                       no-undef
+  408:5     warning  'currentUserId' is not defined                          no-undef
+  409:5     warning  'activeStorageKey' is not defined                       no-undef
+  409:24    warning  'STORAGE_KEY' is not defined                            no-undef
+  410:29    warning  'STORAGE_KEY' is not defined                            no-undef
+  411:5     warning  'appData' is not defined                                no-undef
+  411:15    warning  'normalizarDados' is not defined                        no-undef
+  411:31    warning  'criarCarreiraInicial' is not defined                   no-undef
+  414:23    warning  'STORAGE_KEY' is not defined                            no-undef
+  420:5     warning  'appData' is not defined                                no-undef
+  420:15    warning  'normalizarDados' is not defined                        no-undef
+  421:5     warning  'salvarDados' is not defined                            no-undef
+  423:5     warning  'syncCal' is not defined                                no-undef
+  425:12    warning  'cloneData' is not defined                              no-undef
+  425:22    warning  'appData' is not defined                                no-undef
+  427:18    warning  'cloneData' is not defined                              no-undef
+  427:28    warning  'appData' is not defined                                no-undef
+  430:10    warning  'excluirSelecionados' is defined but never used         no-unused-vars
+  431:7     warning  'selCards' is not defined                               no-undef
+  434:54    warning  'selCards' is not defined                               no-undef
+  439:3     warning  'consolidarEdicoes' is not defined                      no-undef
+  441:5     warning  'abaAtiva' is not defined                               no-undef
+  442:9     warning  'subAbaMercado' is not defined                          no-undef
+  443:11    warning  'getSeason' is not defined                              no-undef
+  444:11    warning  'getSeason' is not defined                              no-undef
+  445:9     warning  'getSeason' is not defined                              no-undef
+  448:3     warning  'selCards' is not defined                               no-undef
+  450:3     warning  'selCards' is not defined                               no-undef
+  452:17    warning  'getSeason' is not defined                              no-undef
+  453:17    warning  'getSeason' is not defined                              no-undef
+  456:11    warning  's' is not defined                                      no-undef
+  459:11    warning  's' is not defined                                      no-undef
+  461:11    warning  's' is not defined                                      no-undef
+  463:11    warning  's' is not defined                                      no-undef
+  466:18    warning  's' is not defined                                      no-undef
+  472:3     warning  'selCards' is not defined                               no-undef
+  473:3     warning  'salvarDados' is not defined                            no-undef
+  477:10    warning  'excluirVisiveis' is defined but never used             no-unused-vars
+  479:9     warning  'isOut' is assigned a value but never used              no-unused-vars
+  479:17    warning  'abaAtiva' is not defined                               no-undef
+  479:43    warning  'subAbaMercado' is not defined                          no-undef
+  481:5     warning  'abaAtiva' is not defined                               no-undef
+  482:9     warning  'subAbaMercado' is not defined                          no-undef
+  483:11    warning  'getSeason' is not defined                              no-undef
+  484:11    warning  'getSeason' is not defined                              no-undef
+  485:9     warning  'getSeason' is not defined                              no-undef
+  489:8     warning  'abaAtiva' is not defined                               no-undef
+  491:11    warning  'abaAtiva' is not defined                               no-undef
+  493:13    warning  'abaAtiva' is not defined                               no-undef
+  494:15    warning  'subAbaMercado' is not defined                          no-undef
+  496:17    warning  'subAbaMercado' is not defined                          no-undef
+  498:19    warning  'subAbaMercado' is not defined                          no-undef
+  502:9     warning  'filtros' is not defined                                no-undef
+  502:31    warning  'filtros' is not defined                                no-undef
+  503:9     warning  'filtros' is not defined                                no-undef
+  503:31    warning  'filtros' is not defined                                no-undef
+  504:9     warning  'filtros' is not defined                                no-undef
+  504:34    warning  'filtros' is not defined                                no-undef
+  506:9     warning  'filtroRenovacaoAtivo' is not defined                   no-undef
+  507:18    warning  'filtros' is not defined                                no-undef
+  508:18    warning  'filtros' is not defined                                no-undef
+  509:16    warning  'filtros' is not defined                                no-undef
+  510:16    warning  'filtros' is not defined                                no-undef
+  511:16    warning  'filtros' is not defined                                no-undef
+  512:16    warning  'filtros' is not defined                                no-undef
+  513:18    warning  'filtros' is not defined                                no-undef
+  514:18    warning  'filtros' is not defined                                no-undef
+  529:22    warning  'getSeason' is not defined                              no-undef
+  530:19    warning  'getSeason' is not defined                              no-undef
+  533:13    warning  's' is not defined                                      no-undef
+  536:13    warning  's' is not defined                                      no-undef
+  538:13    warning  's' is not defined                                      no-undef
+  540:13    warning  's' is not defined                                      no-undef
+  543:20    warning  's' is not defined                                      no-undef
+  549:3     warning  'selCards' is not defined                               no-undef
+  550:3     warning  'salvarDados' is not defined                            no-undef
+  554:10    warning  'debounceBusca' is defined but never used               no-unused-vars
+  557:5     warning  'consolidarEdicoes' is not defined                      no-undef
+  562:10    warning  'exportarBackup' is defined but never used              no-unused-vars
+  564:36    warning  'appData' is not defined                                no-undef
+  565:22    warning  'Blob' is not defined                                   no-undef
+  566:17    warning  'URL' is not defined                                    no-undef
+  573:5     warning  'URL' is not defined                                    no-undef
+  574:12    warning  'e' is defined but never used                           no-unused-vars
+  579:10    warning  'exportarElencoAtualJSON' is defined but never used     no-unused-vars
+  581:25    warning  'appData' is not defined                                no-undef
+  581:41    warning  'appData' is not defined                                no-undef
+  583:10    warning  'appData' is not defined                                no-undef
+  588:22    warning  'Blob' is not defined                                   no-undef
+  589:17    warning  'URL' is not defined                                    no-undef
+  597:5     warning  'URL' is not defined                                    no-undef
+  598:12    warning  'e' is defined but never used                           no-unused-vars
+  603:10    warning  'importarElencoAtualJSON' is defined but never used     no-unused-vars
+  606:22    warning  'FileReader' is not defined                             no-undef
+  617:9     warning  'appData' is not defined                                no-undef
+  617:25    warning  'appData' is not defined                                no-undef
+  618:9     warning  'appData' is not defined                                no-undef
+  621:34    warning  'appData' is not defined                                no-undef
+  622:57    warning  'atualizarStorageInfo' is not defined                   no-undef
+  624:40    warning  'appData' is not defined                                no-undef
+  626:11    warning  'salvarDados' is not defined                            no-undef
+  630:49    warning  'trocarElenco' is not defined                           no-undef
+  644:10    warning  'importarBackup' is defined but never used              no-unused-vars
+  647:22    warning  'FileReader' is not defined                             no-undef
+  671:10    warning  'verificarEventosNarrativos' is defined but never used  no-unused-vars
+  679:9     warning  'dStr' is assigned a value but never used               no-unused-vars
+  689:7     warning  'addNotif' is not defined                               no-undef
+  758:7     warning  'addNotif' is not defined                               no-undef
+  774:9     warning  'addNotif' is not defined                               no-undef
+  787:9     warning  'addNotif' is not defined                               no-undef
+  797:27    warning  'i' is defined but never used                           no-unused-vars
+  799:11    warning  'est' is assigned a value but never used                no-unused-vars
+  813:11    warning  'addNotif' is not defined                               no-undef
+  826:9     warning  'addNotif' is not defined                               no-undef
+  848:21    warning  'Image' is not defined                                  no-undef
+  877:17    warning  'appData' is not defined                                no-undef
+  903:3     warning  'salvarDados' is not defined                            no-undef
+  924:3     warning  'requestAnimationFrame' is not defined                  no-undef
+  940:8     warning  'appData' is not defined                                no-undef
+  940:27    warning  'appData' is not defined                                no-undef
+  944:17    warning  'appData' is not defined                                no-undef
+  944:33    warning  'appData' is not defined                                no-undef
+  953:3     warning  'salvarDados' is not defined                            no-undef
+  962:3     warning  'paginaAtual' is not defined                            no-undef
+
+C:\Users\larao\Desktop\Modo Carreira EA FC\assets\js\app-roster.js
+    1:10   warning  'processarImg' is defined but never used                    no-unused-vars
+    4:17   warning  'FileReader' is not defined                                 no-undef
+    6:21   warning  'Image' is not defined                                      no-undef
+   30:9    warning  'abaAtiva' is not defined                                   no-undef
+   31:13   warning  'subAbaMercado' is not defined                              no-undef
+   32:15   warning  'getSeason' is not defined                                  no-undef
+   33:15   warning  'getSeason' is not defined                                  no-undef
+   34:13   warning  'getSeason' is not defined                                  no-undef
+   35:21   warning  'imgUploadIdx' is not defined                               no-undef
+   37:7    warning  'salvarDados' is not defined                                no-undef
+   38:7    warning  'renderizar' is not defined                                 no-undef
+   46:7    warning  'toggleAcc' is assigned a value but never used              no-unused-vars
+   53:7    warning  'modoEdicao' is not defined                                 no-undef
+   53:19   warning  'consolidarEdicoes' is not defined                          no-undef
+   54:3    warning  'modoEdicao' is not defined                                 no-undef
+   54:17   warning  'modoEdicao' is not defined                                 no-undef
+   55:3    warning  'selCards' is not defined                                   no-undef
+   56:3    warning  'paginaAtual' is not defined                                no-undef
+   57:32   warning  'modoEdicao' is not defined                                 no-undef
+   58:3    warning  'renderizar' is not defined                                 no-undef
+   61:16   warning  'mudarAba' is defined but never used                        no-unused-vars
+   62:7    warning  'modoEdicao' is not defined                                 no-undef
+   63:3    warning  'abaAtiva' is not defined                                   no-undef
+   64:3    warning  'selCards' is not defined                                   no-undef
+   65:3    warning  '$$' is not defined                                         no-undef
+   67:3    warning  'filtros' is not defined                                    no-undef
+   81:3    warning  'filtroRenovacaoAtivo' is not defined                       no-undef
+   82:3    warning  'snapshotVisualizando' is not defined                       no-undef
+   83:3    warning  'subAbaMercado' is not defined                              no-undef
+   84:3    warning  'renderizar' is not defined                                 no-undef
+   86:7    warning  'trocarElenco' is assigned a value but never used           no-unused-vars
+   87:7    warning  'modoEdicao' is not defined                                 no-undef
+   88:3    warning  'appData' is not defined                                    no-undef
+   89:3    warning  'selCards' is not defined                                   no-undef
+   90:3    warning  'snapshotVisualizando' is not defined                       no-undef
+   91:3    warning  'compsSelecionadas' is not defined                          no-undef
+   92:3    warning  'editComp' is not defined                                   no-undef
+   93:3    warning  'syncCal' is not defined                                    no-undef
+   94:3    warning  'salvarDados' is not defined                                no-undef
+   95:3    warning  'renderizar' is not defined                                 no-undef
+   97:7    warning  'trocarTemporada' is assigned a value but never used        no-unused-vars
+   98:7    warning  'modoEdicao' is not defined                                 no-undef
+   99:3    warning  'appData' is not defined                                    no-undef
+   99:19   warning  'appData' is not defined                                    no-undef
+  100:3    warning  'selCards' is not defined                                   no-undef
+  101:3    warning  'snapshotVisualizando' is not defined                       no-undef
+  102:3    warning  'compsSelecionadas' is not defined                          no-undef
+  103:3    warning  'editComp' is not defined                                   no-undef
+  104:3    warning  'syncCal' is not defined                                    no-undef
+  105:3    warning  'salvarDados' is not defined                                no-undef
+  106:3    warning  'renderizar' is not defined                                 no-undef
+  108:7    warning  'adicionarElenco' is assigned a value but never used        no-unused-vars
+  111:5    warning  'appData' is not defined                                    no-undef
+  130:5    warning  'appData' is not defined                                    no-undef
+  130:27   warning  'appData' is not defined                                    no-undef
+  131:5    warning  'selCards' is not defined                                   no-undef
+  132:5    warning  'snapshotVisualizando' is not defined                       no-undef
+  133:5    warning  'compsSelecionadas' is not defined                          no-undef
+  134:5    warning  'editComp' is not defined                                   no-undef
+  135:5    warning  'syncCal' is not defined                                    no-undef
+  136:5    warning  'salvarDados' is not defined                                no-undef
+  137:5    warning  'renderizar' is not defined                                 no-undef
+  140:7    warning  'excluirElencoAtual' is assigned a value but never used     no-unused-vars
+  141:7    warning  'appData' is not defined                                    no-undef
+  143:5    warning  'appData' is not defined                                    no-undef
+  143:28   warning  'appData' is not defined                                    no-undef
+  144:5    warning  'appData' is not defined                                    no-undef
+  144:39   warning  'appData' is not defined                                    no-undef
+  145:5    warning  'salvarDados' is not defined                                no-undef
+  146:5    warning  'renderizar' is not defined                                 no-undef
+  149:7    warning  'excluirTemporadaAtual' is assigned a value but never used  no-unused-vars
+  150:13   warning  'appData' is not defined                                    no-undef
+  150:29   warning  'appData' is not defined                                    no-undef
+  155:5    warning  'salvarDados' is not defined                                no-undef
+  156:5    warning  'renderizar' is not defined                                 no-undef
+  160:7    warning  'getBg' is assigned a value but never used                  no-unused-vars
+  165:7    warning  'getStatusEmoji' is assigned a value but never used         no-unused-vars
+  174:7    warning  'getSituacaoClass' is assigned a value but never used       no-unused-vars
+  184:7    warning  'toggleSortDirection' is assigned a value but never used    no-unused-vars
+  185:3    warning  'consolidarEdicoes' is not defined                          no-undef
+  186:3    warning  'sortDir' is not defined                                    no-undef
+  186:13   warning  'sortDir' is not defined                                    no-undef
+  187:3    warning  'renderizar' is not defined                                 no-undef
+  190:3    warning  'consolidarEdicoes' is not defined                          no-undef
+  191:3    warning  'filtros' is not defined                                    no-undef
+  191:16   warning  'filtros' is not defined                                    no-undef
+  191:41   warning  'filtros' is not defined                                    no-undef
+  191:81   warning  'filtros' is not defined                                    no-undef
+  192:3    warning  'renderizar' is not defined                                 no-undef
+  196:3    warning  'consolidarEdicoes' is not defined                          no-undef
+  197:3    warning  'filtros' is not defined                                    no-undef
+  198:3    warning  'filtros' is not defined                                    no-undef
+  199:3    warning  'filtros' is not defined                                    no-undef
+  200:3    warning  'filtros' is not defined                                    no-undef
+  201:3    warning  'renderizar' is not defined                                 no-undef
+  204:3    warning  'consolidarEdicoes' is not defined                          no-undef
+  205:7    warning  'selCards' is not defined                                   no-undef
+  205:29   warning  'selCards' is not defined                                   no-undef
+  205:40   warning  'selCards' is not defined                                   no-undef
+  206:8    warning  'selCards' is not defined                                   no-undef
+  207:3    warning  'renderizar' is not defined                                 no-undef
+  210:7    warning  'renderizarDashboard' is assigned a value but never used    no-unused-vars
+  211:13   warning  'getSeason' is not defined                                  no-undef
+  214:374  warning  'modoEdicao' is not defined                                 no-undef
+  214:581  warning  'modoEdicao' is not defined                                 no-undef
+  214:749  warning  'abaAtiva' is not defined                                   no-undef
+  214:931  warning  'abaAtiva' is not defined                                   no-undef
+  217:7    warning  'excluirAbaTodo' is assigned a value but never used         no-unused-vars
+  218:11   warning  'abaAtiva' is not defined                                   no-undef
+  218:51   warning  'abaAtiva' is not defined                                   no-undef
+  220:9    warning  'abaAtiva' is not defined                                   no-undef
+  220:33   warning  'getSeason' is not defined                                  no-undef
+  221:14   warning  'abaAtiva' is not defined                                   no-undef
+  222:7    warning  'getSeason' is not defined                                  no-undef
+  222:31   warning  'getSeason' is not defined                                  no-undef
+  224:7    warning  'getSeason' is not defined                                  no-undef
+  224:31   warning  'getSeason' is not defined                                  no-undef
+  225:7    warning  'getSeason' is not defined                                  no-undef
+  227:5    warning  'salvarDados' is not defined                                no-undef
+  228:5    warning  'renderizar' is not defined                                 no-undef
+  232:8    warning  'selCards' is not defined                                   no-undef
+  232:47   warning  'selCards' is not defined                                   no-undef
+  233:3    warning  'consolidarEdicoes' is not defined                          no-undef
+  235:5    warning  'abaAtiva' is not defined                                   no-undef
+  236:9    warning  'subAbaMercado' is not defined                              no-undef
+  237:11   warning  'getSeason' is not defined                                  no-undef
+  238:11   warning  'getSeason' is not defined                                  no-undef
+  239:9    warning  'getSeason' is not defined                                  no-undef
+  240:3    warning  'selCards' is not defined                                   no-undef
+  244:19   warning  'getSeason' is not defined                                  no-undef
+  245:19   warning  'getSeason' is not defined                                  no-undef
+  248:13   warning  's' is not defined                                          no-undef
+  251:13   warning  's' is not defined                                          no-undef
+  253:13   warning  's' is not defined                                          no-undef
+  255:13   warning  's' is not defined                                          no-undef
+  258:20   warning  's' is not defined                                          no-undef
+  262:3    warning  'selCards' is not defined                                   no-undef
+  263:3    warning  'salvarDados' is not defined                                no-undef
+  264:3    warning  'renderizar' is not defined                                 no-undef
+  267:10   warning  'importarCSV' is defined but never used                     no-unused-vars
+  268:3    warning  'consolidarEdicoes' is not defined                          no-undef
+  270:17   warning  'FileReader' is not defined                                 no-undef
+  278:11   warning  'getSeason' is not defined                                  no-undef
+  278:23   warning  'abaAtiva' is not defined                                   no-undef
+  301:5    warning  'salvarDados' is not defined                                no-undef
+  302:5    warning  'renderizar' is not defined                                 no-undef
+  305:10   warning  'abaAtiva' is not defined                                   no-undef
+  305:47   warning  'abaAtiva' is not defined                                   no-undef
+  313:10   warning  'acionarImportarCSV' is defined but never used              no-unused-vars
+  314:7    warning  'abaAtiva' is not defined                                   no-undef
+  321:10   warning  'importarCalendarioCSV' is defined but never used           no-unused-vars
+  322:3    warning  'consolidarEdicoes' is not defined                          no-undef
+  324:17   warning  'FileReader' is not defined                                 no-undef
+  326:15   warning  'getSeason' is not defined                                  no-undef
+  345:5    warning  'getSeason' is not defined                                  no-undef
+  346:5    warning  'salvarDados' is not defined                                no-undef
+  347:5    warning  'renderizar' is not defined                                 no-undef
+  356:17   warning  'abaAtiva' is not defined                                   no-undef
+  357:13   warning  'abaAtiva' is not defined                                   no-undef
+  358:15   warning  'filtros' is not defined                                    no-undef
+  359:13   warning  'filtros' is not defined                                    no-undef
+  360:12   warning  'filtros' is not defined                                    no-undef
+  384:5    warning  'getSeason' is not defined                                  no-undef
+  406:5    warning  'salvarDados' is not defined                                no-undef
+  407:5    warning  'renderizar' is not defined                                 no-undef
+  408:5    warning  'mostrarToast' is not defined                               no-undef
+  411:5    warning  'mostrarToast' is not defined                               no-undef
+  418:7    warning  'consolidarEdicoes' is not defined                          no-undef
+  420:9    warning  'abaAtiva' is not defined                                   no-undef
+  421:13   warning  'subAbaMercado' is not defined                              no-undef
+  422:15   warning  'getSeason' is not defined                                  no-undef
+  423:15   warning  'getSeason' is not defined                                  no-undef
+  424:13   warning  'getSeason' is not defined                                  no-undef
+  426:19   warning  'getSeason' is not defined                                  no-undef
+  427:19   warning  'getSeason' is not defined                                  no-undef
+  430:13   warning  's' is not defined                                          no-undef
+  433:13   warning  's' is not defined                                          no-undef
+  435:13   warning  's' is not defined                                          no-undef
+  437:13   warning  's' is not defined                                          no-undef
+  440:20   warning  's' is not defined                                          no-undef
+  443:7    warning  'salvarDados' is not defined                                no-undef
+  444:7    warning  'renderizar' is not defined                                 no-undef
+  445:7    warning  'mostrarToast' is not defined                               no-undef
+  448:7    warning  'mostrarToast' is not defined                               no-undef
+  453:10   warning  'alterarValor' is defined but never used                    no-unused-vars
+  454:3    warning  'consolidarEdicoes' is not defined                          no-undef
+  456:5    warning  'abaAtiva' is not defined                                   no-undef
+  457:9    warning  'subAbaMercado' is not defined                              no-undef
+  458:11   warning  'getSeason' is not defined                                  no-undef
+  459:11   warning  'getSeason' is not defined                                  no-undef
+  460:9    warning  'getSeason' is not defined                                  no-undef
+  466:3    warning  'salvarDados' is not defined                                no-undef
+  467:3    warning  'renderizar' is not defined                                 no-undef
+  470:7    warning  'mudarMesCal' is assigned a value but never used            no-unused-vars
+  471:3    warning  'mesAtualCal' is not defined                                no-undef
+  472:7    warning  'mesAtualCal' is not defined                                no-undef
+  473:5    warning  'mesAtualCal' is not defined                                no-undef
+  474:5    warning  'anoAtualCal' is not defined                                no-undef
+  475:14   warning  'mesAtualCal' is not defined                                no-undef
+  476:5    warning  'mesAtualCal' is not defined                                no-undef
+  477:5    warning  'anoAtualCal' is not defined                                no-undef
+  479:3    warning  'renderizar' is not defined                                 no-undef
+
+C:\Users\larao\Desktop\Modo Carreira EA FC\assets\js\app-tactics.js
+    1:10   warning  'renderizarTaticas' is defined but never used                     no-unused-vars
+    2:13   warning  'getSeason' is not defined                                        no-undef
+   29:11   error    The value assigned to 'ref' is not used in subsequent statements  no-useless-assignment
+   58:9    warning  'filtros' is not defined                                          no-undef
+   58:31   warning  'filtros' is not defined                                          no-undef
+   59:9    warning  'filtros' is not defined                                          no-undef
+   59:34   warning  'filtros' is not defined                                          no-undef
+   64:9    warning  'sortTaticasField' is not defined                                 no-undef
+   66:13   warning  'sortTaticasField' is not defined                                 no-undef
+   68:17   warning  'sortTaticasField' is not defined                                 no-undef
+   70:9    warning  'sortTaticasField' is not defined                                 no-undef
+   72:13   warning  'sortTaticasField' is not defined                                 no-undef
+   74:17   warning  'sortTaticasField' is not defined                                 no-undef
+   76:9    warning  'sortTaticasDir' is not defined                                   no-undef
+   80:11   warning  'sortTaticasDir' is not defined                                   no-undef
+   88:430  warning  'getBg' is not defined                                            no-undef
+   88:536  warning  'getBg' is not defined                                            no-undef
+  115:48   warning  'getAdp' is not defined                                           no-undef
+  137:40   warning  'filtros' is not defined                                          no-undef
+  144:40   warning  'filtros' is not defined                                          no-undef
+  176:7    warning  'alternarVisualizacao' is assigned a value but never used         no-unused-vars
+  177:3    warning  'consolidarEdicoes' is not defined                                no-undef
+  178:3    warning  'modoTabela' is not defined                                       no-undef
+  178:17   warning  'modoTabela' is not defined                                       no-undef
+  179:37   warning  'modoTabela' is not defined                                       no-undef
+  180:3    warning  'renderizar' is not defined                                       no-undef
+  182:7    warning  'ordenarPelaTabela' is assigned a value but never used            no-unused-vars
+  183:3    warning  'consolidarEdicoes' is not defined                                no-undef
+  184:3    warning  'sortDir' is not defined                                          no-undef
+  184:46   warning  'sortDir' is not defined                                          no-undef
+  186:3    warning  'renderizar' is not defined                                       no-undef
+  188:7    warning  'exportarJSON' is assigned a value but never used                 no-unused-vars
+  190:12   warning  'URL' is not defined                                              no-undef
+  191:9    warning  'Blob' is not defined                                             no-undef
+  191:30   warning  'appData' is not defined                                          no-undef
+  198:7    warning  'importarJSON' is assigned a value but never used                 no-unused-vars
+  200:17   warning  'FileReader' is not defined                                       no-undef
+  206:39   warning  'defaultMercadoPlayer' is not defined                             no-undef
+  215:55   warning  'defaultCalendarioLigue1' is not defined                          no-undef
+  226:61   warning  'defaultCalendarioLigue1' is not defined                          no-undef
+  229:9    warning  'appData' is not defined                                          no-undef
+  230:9    warning  'appData' is not defined                                          no-undef
+  231:9    warning  'salvarDados' is not defined                                      no-undef
+  232:9    warning  'renderizar' is not defined                                       no-undef
+  235:14   warning  'e' is defined but never used                                     no-unused-vars
+  235:17   error    Empty block statement                                             no-empty
+  250:7    warning  'renderDeltaSpan' is assigned a value but never used              no-unused-vars
+  270:7    warning  'transformarEmInput' is assigned a value but never used           no-unused-vars
+  277:10   warning  'salvarEdicaoManual' is defined but never used                    no-unused-vars
+  278:3    warning  'consolidarEdicoes' is not defined                                no-undef
+  280:24   warning  'renderizar' is not defined                                       no-undef
+  282:5    warning  'abaAtiva' is not defined                                         no-undef
+  283:9    warning  'subAbaMercado' is not defined                                    no-undef
+  284:11   warning  'getSeason' is not defined                                        no-undef
+  285:11   warning  'getSeason' is not defined                                        no-undef
+  286:9    warning  'getSeason' is not defined                                        no-undef
+  299:3    warning  'salvarDados' is not defined                                      no-undef
+  300:3    warning  'renderizar' is not defined                                       no-undef
+  303:3    warning  'sortTaticasDir' is not defined                                   no-undef
+  303:20   warning  'sortTaticasField' is not defined                                 no-undef
+  303:46   warning  'sortTaticasDir' is not defined                                   no-undef
+  304:3    warning  'sortTaticasField' is not defined                                 no-undef
+  305:3    warning  'renderizar' is not defined                                       no-undef
+  312:13   warning  'getSeason' is not defined                                        no-undef
+  322:3    warning  'salvarDados' is not defined                                      no-undef
+  323:3    warning  'renderizar' is not defined                                       no-undef
+  325:7    warning  'exportarCSV' is assigned a value but never used                  no-unused-vars
+  326:7    warning  'abaAtiva' is not defined                                         no-undef
+  327:17   warning  'getSeason' is not defined                                        no-undef
+  330:14   warning  'URL' is not defined                                              no-undef
+  331:11   warning  'Blob' is not defined                                             no-undef
+  350:5    warning  'abaAtiva' is not defined                                         no-undef
+  351:9    warning  'subAbaMercado' is not defined                                    no-undef
+  352:11   warning  'getSeason' is not defined                                        no-undef
+  353:11   warning  'getSeason' is not defined                                        no-undef
+  354:9    warning  'getSeason' is not defined                                        no-undef
+  356:5    warning  'abaAtiva' is not defined                                         no-undef
+  358:9    warning  'abaAtiva' is not defined                                         no-undef
+  360:11   warning  'abaAtiva' is not defined                                         no-undef
+  361:13   warning  'subAbaMercado' is not defined                                    no-undef
+  368:12   warning  'URL' is not defined                                              no-undef
+  369:9    warning  'Blob' is not defined                                             no-undef
+  406:7    warning  'toggleFiltroRenovacao' is assigned a value but never used        no-unused-vars
+  407:3    warning  'consolidarEdicoes' is not defined                                no-undef
+  408:3    warning  'filtroRenovacaoAtivo' is not defined                             no-undef
+  408:27   warning  'filtroRenovacaoAtivo' is not defined                             no-undef
+  409:3    warning  'renderizar' is not defined                                       no-undef
+  412:10   warning  'avancarTemporada' is defined but never used                      no-unused-vars
+  413:13   warning  'appData' is not defined                                          no-undef
+  413:29   warning  'appData' is not defined                                          no-undef
+  430:3    warning  'consolidarEdicoes' is not defined                                no-undef
+  543:3    warning  'salvarDados' is not defined                                      no-undef
+  544:3    warning  'renderizar' is not defined                                       no-undef
+  548:7    warning  'defSvg' is assigned a value but never used                       no-unused-vars
+  549:7    warning  'tblSvg' is assigned a value but never used                       no-unused-vars
+  560:3    warning  'filtros' is not defined                                          no-undef
+  561:7    warning  'filtros' is not defined                                          no-undef
+  561:26   warning  'filtros' is not defined                                          no-undef
+  562:18   warning  'filtros' is not defined                                          no-undef
+  562:37   warning  'filtros' is not defined                                          no-undef
+  563:10   warning  'filtros' is not defined                                          no-undef
+  563:29   warning  'filtros' is not defined                                          no-undef
+  566:28   warning  'filtros' is not defined                                          no-undef
+  566:57   warning  'filtros' is not defined                                          no-undef
+  567:28   warning  'filtros' is not defined                                          no-undef
+  567:57   warning  'filtros' is not defined                                          no-undef
+  584:3    warning  'renderizar' is not defined                                       no-undef
+  586:7    warning  'buildFaixasHTML' is assigned a value but never used              no-unused-vars
+  590:32   warning  'filtros' is not defined                                          no-undef
+  590:61   warning  'filtros' is not defined                                          no-undef
+  591:32   warning  'filtros' is not defined                                          no-undef
+  591:61   warning  'filtros' is not defined                                          no-undef
+  600:13   warning  'getSeason' is not defined                                        no-undef
+  617:3    warning  'salvarDados' is not defined                                      no-undef
+  622:13   warning  'getSeason' is not defined                                        no-undef
+  628:3    warning  'salvarDados' is not defined                                      no-undef
+  629:3    warning  'renderizar' is not defined                                       no-undef
+  633:13   warning  'getSeason' is not defined                                        no-undef
+  658:3    warning  'salvarDados' is not defined                                      no-undef
+  659:3    warning  'renderizar' is not defined                                       no-undef
+
+C:\Users\larao\Desktop\Modo Carreira EA FC\assets\js\app-transfers-stats.js
+    2:13   warning  'getSeason' is not defined                               no-undef
+   13:10   warning  'abrirLivroCaixa' is defined but never used              no-unused-vars
+   14:13   warning  'getSeason' is not defined                               no-undef
+   24:7    warning  'salvarDados' is not defined                             no-undef
+   36:159  warning  'formatMoney' is not defined                             no-undef
+   36:342  warning  'formatMoney' is not defined                             no-undef
+   36:553  warning  'formatMoney' is not defined                             no-undef
+   45:432  warning  'formatMoney' is not defined                             no-undef
+   59:10   warning  'abrirModalNegociar' is defined but never used           no-unused-vars
+   60:3    warning  'consolidarEdicoes' is not defined                       no-undef
+   61:13   warning  'getSeason' is not defined                               no-undef
+   81:10   warning  'confirmarNegocio' is defined but never used             no-unused-vars
+   84:13   warning  'getSeason' is not defined                               no-undef
+   90:22   warning  'mostrarToast' is not defined                            no-undef
+  104:5    warning  'mostrarToast' is not defined                            no-undef
+  107:22   warning  'mostrarToast' is not defined                            no-undef
+  120:11   warning  'l' is not defined                                       no-undef
+  121:11   warning  'l' is not defined                                       no-undef
+  123:11   warning  'l' is not defined                                       no-undef
+  125:11   warning  'l' is not defined                                       no-undef
+  128:18   warning  'l' is not defined                                       no-undef
+  131:5    warning  'mostrarToast' is not defined                            no-undef
+  133:3    warning  'salvarDados' is not defined                             no-undef
+  135:3    warning  'renderizar' is not defined                              no-undef
+  146:10   warning  'abrirModalContratar' is defined but never used          no-unused-vars
+  147:3    warning  'consolidarEdicoes' is not defined                       no-undef
+  149:5    warning  'abaAtiva' is not defined                                no-undef
+  150:9    warning  'subAbaMercado' is not defined                           no-undef
+  151:11   warning  'getSeason' is not defined                               no-undef
+  152:11   warning  'getSeason' is not defined                               no-undef
+  153:9    warning  'getSeason' is not defined                               no-undef
+  178:10   warning  'confirmarContrato' is defined but never used            no-unused-vars
+  181:13   warning  'getSeason' is not defined                               no-undef
+  182:11   warning  'subAbaMercado' is not defined                           no-undef
+  189:22   warning  'mostrarToast' is not defined                            no-undef
+  202:5    warning  'mostrarToast' is not defined                            no-undef
+  206:22   warning  'mostrarToast' is not defined                            no-undef
+  221:5    warning  'mostrarToast' is not defined                            no-undef
+  223:3    warning  'salvarDados' is not defined                             no-undef
+  225:3    warning  'renderizar' is not defined                              no-undef
+  228:7    warning  'abrirModalPromover' is assigned a value but never used  no-unused-vars
+  229:3    warning  'consolidarEdicoes' is not defined                       no-undef
+  230:13   warning  'getSeason' is not defined                               no-undef
+  241:10   warning  'confirmarPromocao' is defined but never used            no-unused-vars
+  244:13   warning  'getSeason' is not defined                               no-undef
+  251:5    warning  'mostrarToast' is not defined                            no-undef
+  256:3    warning  'salvarDados' is not defined                             no-undef
+  258:3    warning  'renderizar' is not defined                              no-undef
+  259:3    warning  'mostrarToast' is not defined                            no-undef
+  262:10   warning  'renderizarAbaHistorico' is defined but never used       no-unused-vars
+  263:13   warning  'appData' is not defined                                 no-undef
+  263:29   warning  'appData' is not defined                                 no-undef
+  270:7    warning  'snapshotVisualizando' is not defined                    no-undef
+  270:76   warning  'snapshotVisualizando' is not defined                    no-undef
+  286:14   warning  'appData' is not defined                                 no-undef
+  286:30   warning  'appData' is not defined                                 no-undef
+  287:12   warning  'snapshotAbaSelecionada' is not defined                  no-undef
+  289:125  warning  'snapshotAbaSelecionada' is not defined                  no-undef
+  289:191  warning  'snapshotAbaSelecionada' is not defined                  no-undef
+  296:7    warning  'snapshotAbaSelecionada' is not defined                  no-undef
+  307:15   warning  'snapshotAbaSelecionada' is not defined                  no-undef
+  309:73   warning  'getStatusEmoji' is not defined                          no-undef
+  310:231  warning  'getBg' is not defined                                   no-undef
+  310:349  warning  'getBg' is not defined                                   no-undef
+  310:446  warning  'formatMoney' is not defined                             no-undef
+  310:478  warning  'formatMoney' is not defined                             no-undef
+  310:510  warning  'formatMoney' is not defined                             no-undef
+  310:569  warning  'getSituacaoClass' is not defined                        no-undef
+  310:661  warning  'cSit' is not defined                                    no-undef
+  317:7    warning  'toggleCompFilter' is assigned a value but never used    no-unused-vars
+  318:7    warning  'compsSelecionadas' is not defined                       no-undef
+  318:38   warning  'compsSelecionadas' is not defined                       no-undef
+  318:58   warning  'compsSelecionadas' is not defined                       no-undef
+  319:8    warning  'compsSelecionadas' is not defined                       no-undef
+  320:3    warning  'renderizar' is not defined                              no-undef
+  322:7    warning  'salvarStat' is assigned a value but never used          no-unused-vars
+  323:13   warning  'getSeason' is not defined                               no-undef
+  335:3    warning  'salvarDados' is not defined                             no-undef
+  337:7    warning  'sortStats' is assigned a value but never used           no-unused-vars
+  338:3    warning  'sortStatsDir' is not defined                            no-undef
+  338:18   warning  'sortStatsField' is not defined                          no-undef
+  338:42   warning  'sortStatsDir' is not defined                            no-undef
+  339:3    warning  'sortStatsField' is not defined                          no-undef
+  340:3    warning  'renderizar' is not defined                              no-undef
+  342:7    warning  'adicionarCompExtra' is assigned a value but never used  no-unused-vars
+  345:15   warning  'getSeason' is not defined                               no-undef
+  348:5    warning  'salvarDados' is not defined                             no-undef
+  349:5    warning  'renderizar' is not defined                              no-undef
+  352:7    warning  'renomearCompExtra' is assigned a value but never used   no-unused-vars
+  354:19   warning  'editComp' is not defined                                no-undef
+  355:13   warning  'getSeason' is not defined                               no-undef
+  356:70   warning  'editComp' is not defined                                no-undef
+  359:28   warning  'editComp' is not defined                                no-undef
+  362:24   warning  'editComp' is not defined                                no-undef
+  363:24   warning  'editComp' is not defined                                no-undef
+  364:20   warning  'editComp' is not defined                                no-undef
+  367:7    warning  'compsSelecionadas' is not defined                       no-undef
+  367:34   warning  'editComp' is not defined                                no-undef
+  368:5    warning  'compsSelecionadas' is not defined                       no-undef
+  368:25   warning  'compsSelecionadas' is not defined                       no-undef
+  368:61   warning  'editComp' is not defined                                no-undef
+  369:3    warning  'editComp' is not defined                                no-undef
+  370:3    warning  'salvarDados' is not defined                             no-undef
+  371:3    warning  'renderizar' is not defined                              no-undef
+  373:7    warning  'excluirCompExtra' is assigned a value but never used    no-unused-vars
+  374:41   warning  'editComp' is not defined                                no-undef
+  375:13   warning  'getSeason' is not defined                               no-undef
+  376:72   warning  'editComp' is not defined                                no-undef
+  379:28   warning  'editComp' is not defined                                no-undef
+  382:24   warning  'editComp' is not defined                                no-undef
+  382:48   warning  'editComp' is not defined                                no-undef
+  384:3    warning  'compsSelecionadas' is not defined                       no-undef
+  384:23   warning  'compsSelecionadas' is not defined                       no-undef
+  384:61   warning  'editComp' is not defined                                no-undef
+  385:3    warning  'editComp' is not defined                                no-undef
+  386:3    warning  'salvarDados' is not defined                             no-undef
+  387:3    warning  'renderizar' is not defined                              no-undef
+  391:29   warning  'getSeason' is not defined                               no-undef
+  392:33   warning  'modoEdicao' is not defined                              no-undef
+  394:32   warning  'getCompC' is not defined                                no-undef
+  396:8    warning  'compsSelecionadas' is not defined                       no-undef
+  396:50   warning  'compsSelecionadas' is not defined                       no-undef
+  406:7    warning  'compsSelecionadas' is not defined                       no-undef
+  445:5    warning  'compsSelecionadas' is not defined                       no-undef
+  470:85   warning  'sortStatsField' is not defined                          no-undef
+  472:16   warning  'sortStatsField' is not defined                          no-undef
+  473:16   warning  'sortStatsField' is not defined                          no-undef
+  474:11   warning  'sortStatsField' is not defined                          no-undef
+  478:9    warning  'sortStatsField' is not defined                          no-undef
+  479:9    warning  'sortStatsField' is not defined                          no-undef
+  480:9    warning  'sortStatsField' is not defined                          no-undef
+  481:9    warning  'sortStatsField' is not defined                          no-undef
+  485:18   warning  'sortStatsField' is not defined                          no-undef
+  486:9    warning  'inicializarBases' is not defined                        no-undef
+  487:9    warning  'inicializarBases' is not defined                        no-undef
+  497:9    warning  'sortStatsField' is not defined                          no-undef
+  499:13   warning  'sortStatsField' is not defined                          no-undef
+  501:17   warning  'sortStatsField' is not defined                          no-undef
+  503:9    warning  'sortStatsField' is not defined                          no-undef
+  505:13   warning  'sortStatsField' is not defined                          no-undef
+  507:17   warning  'sortStatsField' is not defined                          no-undef
+  510:9    warning  'sortStatsDir' is not defined                            no-undef
+  514:11   warning  'sortStatsDir' is not defined                            no-undef
+  519:8    warning  'editComp' is not defined                                no-undef
+  519:34   warning  'editComp' is not defined                                no-undef
+  521:418  warning  'compsSelecionadas' is not defined                       no-undef
+  525:434  warning  'editComp' is not defined                                no-undef
+  528:133  warning  'sortStatsField' is not defined                          no-undef
+  528:157  warning  'sortStatsDir' is not defined                            no-undef
+  538:7    warning  'inicializarBases' is not defined                        no-undef
+  548:26   warning  'editComp' is not defined                                no-undef
+  549:21   warning  'editComp' is not defined                                no-undef
+  566:210  warning  'editComp' is not defined                                no-undef
+  567:246  warning  'editComp' is not defined                                no-undef
+  568:209  warning  'formatMoney' is not defined                             no-undef
+  568:263  warning  'formatMoney' is not defined                             no-undef
+  568:337  warning  'getBg' is not defined                                   no-undef
+  570:209  warning  'formatMoney' is not defined                             no-undef
+  570:263  warning  'formatMoney' is not defined                             no-undef
+  570:337  warning  'getBg' is not defined                                   no-undef
+  570:850  warning  'cN' is not defined                                      no-undef
+  578:10   warning  'getSeason' is not defined                               no-undef
+  579:3    warning  'salvarDados' is not defined                             no-undef
+  580:3    warning  'renderizar' is not defined                              no-undef
+
+✖ 1409 problems (4 errors, 1405 warnings)
+
