@@ -1,0 +1,26 @@
+{
+    "name": "manager-fc-career-workspace",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "seed": "node scripts/build-seed.mjs",
+        "build": "node scripts/build.mjs",
+        "dev": "node scripts/dev.mjs",
+        "check": "node scripts/check.mjs",
+        "parse": "node scripts/parse_sofifa.mjs",
+        "update-db": "node scripts/importar_atualizacao.mjs",
+        "lint": "eslint assets/js",
+        "format": "prettier --write \"assets/js/**/*.js\" \"*.html\""
+    },
+    "dependencies": {
+        "jsdom": "^29.1.1"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "eslint": "^10.8.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.6",
+        "prettier": "^3.9.6"
+    }
+}
