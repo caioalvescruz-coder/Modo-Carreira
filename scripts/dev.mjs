@@ -35,6 +35,6 @@ createServer((request, response) => {
     'Cache-Control': 'no-store'
   });
   createReadStream(target).pipe(response);
-}).listen(port, '127.0.0.1', () => {
-  console.log(`Manager FC disponível em http://127.0.0.1:${port}`);
+}).listen(port, () => {
+  console.log(`Manager FC disponível em http://localhost:${port}`);
 });

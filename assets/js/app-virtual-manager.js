@@ -380,7 +380,6 @@ window.MessageCatalog = {
                     body: '<p>Fim de mês detectado. Não esqueça de sincronizar os dados do seu PS5 (Evolução de Overalls, Verbas de Transferência e Vendas) com o Virtual Manager para manter os relatórios em dia.</p>'
                 }
             ]
-            ]
         }
     ],
 

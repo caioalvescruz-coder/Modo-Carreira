@@ -961,9 +961,9 @@ window.mostrarToast = function (msg, isError = false) {
 // --- INTEGRA��O BUSCA UNIVERSAL (RENDER) ---
 
 // --- INTEGRAÇÃO BUSCA UNIVERSAL (RENDER) ---
-window.adicionarAoAlvoUniversal = function (idx, btn) {
+window.adicionarAoAlvoUniversal = async function (idx, btn) {
   if (!appData.elencos || appData.elencos.length === 0) {
-    alert('Crie um time primeiro!');
+    await showCustomModal({ title: 'Aviso', message: 'Crie um time primeiro!', icon: '⚠️' });
     return;
   }
   const elAtv = appData.elencos[appData.indiceAtivo || 0];
@@ -971,9 +971,14 @@ window.adicionarAoAlvoUniversal = function (idx, btn) {
   if (!season.mercado) season.mercado = [];
 
   const jId = window.bdJogadores[idx].id;
-  if (elAtv.temporadas[elAtv.temporadaAtiva || 0].jogadores?.some((x) => x.id === jId))
-    return alert('Jogador já está no seu elenco!');
-  if (season.mercado.some((x) => x.id === jId)) return alert('Jogador já está na lista de alvos!');
+  if (elAtv.temporadas[elAtv.temporadaAtiva || 0].jogadores?.some((x) => x.id === jId)) {
+    await showCustomModal({ title: 'Aviso', message: 'Jogador já está no seu elenco!', icon: '⚠️' });
+    return;
+  }
+  if (season.mercado.some((x) => x.id === jId)) {
+    await showCustomModal({ title: 'Aviso', message: 'Jogador já está na lista de alvos!', icon: '⚠️' });
+    return;
+  }
   const jogador = JSON.parse(JSON.stringify(window.bdJogadores[idx]));
   jogador.situacao = 'Observação';
   jogador.status = 'Não Relacionado';
@@ -1055,8 +1060,281 @@ window.getAlvoBtnHtml = function (idx, j) {
   if (s.jogadores && s.jogadores.some((el) => el.id && el.id === j.id)) {
     return `<button style="position:absolute;top:5px;right:5px;background:#334155;color:#94a3b8;border:none;padding:4px 8px;border-radius:4px;font-weight:700;cursor:not-allowed;font-size:.8em;z-index:10;" disabled>✅ Seu Elenco</button>`;
   }
+  
+  if (window.isModoFundacao) {
+    return `<button onclick="adicionarJogadorFundacao(${idx}, this)" style="position:absolute;top:5px;right:5px;background:#10b981;color:#fff;border:none;padding:4px 8px;border-radius:4px;font-weight:700;cursor:pointer;font-size:.8em;z-index:10;transition:all 0.2s" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'">✨ Adicionar (Nativo)</button>`;
+  }
+
   if (s.mercado && s.mercado.some((el) => el.id && el.id === j.id)) {
     return `<button style="position:absolute;top:5px;right:5px;background:#334155;color:#94a3b8;border:none;padding:4px 8px;border-radius:4px;font-weight:700;cursor:not-allowed;font-size:.8em;z-index:10;" disabled>✅ Na Lista</button>`;
   }
   return `<button onclick="adicionarAoAlvoUniversal(${idx}, this)" style="position:absolute;top:5px;right:5px;background:#0284c7;color:#fff;border:none;padding:4px 8px;border-radius:4px;font-weight:700;cursor:pointer;font-size:.8em;z-index:10;transition:all 0.2s" onmouseover="this.style.background='#0369a1'" onmouseout="this.style.background='#0284c7'">➕ Alvos</button>`;
+};
+
+window.renderizarTelaDeElencos = function() {
+  const container = document.getElementById('dash-saves-grid');
+  if (!container) return;
+  
+  if (!appData || !appData.elencos || appData.elencos.length === 0) {
+    container.innerHTML = '<p style="color:#94a3b8; width:100%; text-align:center;">Nenhum elenco encontrado.</p>';
+    return;
+  }
+  
+  let html = '';
+  appData.elencos.forEach((elenco, index) => {
+    const nome = elenco.nome || 'Elenco ' + (index + 1);
+    const jogadores = elenco.temporadas && elenco.temporadas[elenco.temporadaAtiva || 0]?.jogadores 
+                      ? elenco.temporadas[elenco.temporadaAtiva || 0].jogadores.length : 0;
+    
+    html += `
+      <div class="dash-card" onclick="entrarNoElenco(${index})" style="cursor:pointer; border:1px solid #334155; padding:20px; border-radius:8px; background:#1e293b; text-align:center; transition: 0.2s; min-width: 200px;">
+        <h3 style="color:#fbbf24; margin:0 0 10px 0; font-size:1.5em;">${nome}</h3>
+        <p style="color:#94a3b8; margin:0; font-size:1em;">${jogadores} jogadores</p>
+      </div>
+    `;
+  });
+  
+  container.innerHTML = html;
+};
+
+window.entrarNoElenco = function(index) {
+  if (!appData.elencos[index]) return;
+  appData.indiceAtivo = index;
+  salvarDados();
+  
+  const squadSelect = document.getElementById('squad-select');
+  if (squadSelect) squadSelect.selectedIndex = index;
+  
+  syncCal();
+  renderizar();
+  
+  if (typeof enterAppShell === 'function') {
+    enterAppShell();
+  }
+};
+
+window.showCustomModal = function(options) {
+  return new Promise((resolve) => {
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);backdrop-filter:blur(5px);z-index:99999;display:flex;justify-content:center;align-items:center;opacity:0;transition:opacity 0.2s;';
+    
+    const card = document.createElement('div');
+    card.className = 'auth-card';
+    card.style.cssText = 'width:90%; max-width:400px; padding:30px; text-align:center; transform:scale(0.9); transition:transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);';
+    
+    const iconHtml = options.icon ? `<div style="font-size:3.5em; margin-bottom:15px; text-shadow:0 0 20px rgba(255,255,255,0.1);">${options.icon}</div>` : '';
+    const titleHtml = `<h2 style="color:#fbbf24; margin:0 0 15px 0; font-size:1.5em; font-weight:900;">${options.title}</h2>`;
+    const msgHtml = `<p style="color:#94a3b8; margin:0 0 25px 0; line-height:1.6; font-size:1.05em;">${options.message}</p>`;
+    
+    let inputHtml = '';
+    if (options.type === 'prompt') {
+      inputHtml = `<input type="text" id="modal-input" placeholder="${options.placeholder || ''}" value="${options.defaultValue || ''}" style="width:100%; padding:15px; margin-bottom:25px; background:#0f172a; border:2px solid #334155; border-radius:8px; color:#fff; font-size:1.1em; text-align:center; box-sizing:border-box; outline:none; transition:0.2s;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#334155'">`;
+    }
+    
+    const btnsHtml = `
+      <div style="display:flex; gap:15px; justify-content:center;">
+        ${options.showCancel ? `<button id="modal-cancel" style="background:transparent; color:#94a3b8; border:2px solid #334155; padding:12px 20px; border-radius:8px; cursor:pointer; font-weight:bold; flex:1; transition:0.2s;" onmouseover="this.style.background='#334155';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#94a3b8'">Cancelar</button>` : ''}
+        <button id="modal-confirm" style="background:#10b981; color:#fff; border:none; padding:12px 20px; border-radius:8px; cursor:pointer; font-weight:bold; flex:1.5; font-size:1.05em; transition:0.2s; box-shadow:0 4px 15px rgba(16,185,129,0.3);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">${options.confirmText || 'OK'}</button>
+      </div>
+    `;
+    
+    card.innerHTML = iconHtml + titleHtml + msgHtml + inputHtml + btnsHtml;
+    overlay.appendChild(card);
+    document.body.appendChild(overlay);
+    
+    // Animation trigger
+    setTimeout(() => {
+      overlay.style.opacity = '1';
+      card.style.transform = 'scale(1)';
+      if (options.type === 'prompt') {
+        const input = document.getElementById('modal-input');
+        input.focus();
+        input.setSelectionRange(0, input.value.length);
+        
+        input.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            document.getElementById('modal-confirm').click();
+          }
+        });
+      }
+    }, 10);
+    
+    const close = (val) => {
+      overlay.style.opacity = '0';
+      card.style.transform = 'scale(0.9)';
+      setTimeout(() => {
+        overlay.remove();
+        resolve(val);
+      }, 200);
+    };
+    
+    document.getElementById('modal-confirm').onclick = () => {
+      if (options.type === 'prompt') {
+        close(document.getElementById('modal-input').value.trim());
+      } else {
+        close(true);
+      }
+    };
+    
+    if (options.showCancel) {
+      document.getElementById('modal-cancel').onclick = () => close(null);
+    }
+  });
+};
+
+window.iniciarNovaCarreira = async function() {
+  const nome = await showCustomModal({
+    type: 'prompt',
+    title: 'Novo Modo Carreira',
+    message: 'Dê um nome para o seu novo elenco / save:',
+    placeholder: 'Ex: Manchester United',
+    showCancel: true,
+    confirmText: 'Criar Elenco',
+    icon: '🏆'
+  });
+  
+  if (!nome) return;
+  
+  const tempVazia = {
+    nome: 'Temporada 1',
+    jogadores: [],
+    mercado: [],
+    calendario: [],
+    verba: 100000000,
+    salario: 500000
+  };
+  
+  if (!appData.elencos) appData.elencos = [];
+  
+  const novoElenco = {
+    nome: nome,
+    temporadaAtiva: 0,
+    historico: [],
+    temporadas: [tempVazia]
+  };
+  
+  appData.elencos.push(novoElenco);
+  appData.indiceAtivo = appData.elencos.length - 1;
+  
+  // A normalização preenche os campos vitais como dataAtual, calendário, etc.
+  if (typeof normalizarDados === 'function') {
+    appData = normalizarDados(appData);
+  }
+  
+  salvarDados();
+  
+  window.isModoFundacao = true;
+  
+  if (typeof enterAppShell === 'function') {
+    enterAppShell();
+  }
+  
+  mudarAba('banco');
+  
+  // Cria o botão flutuante para encerrar fundação se não existir
+  if (!document.getElementById('btn-encerrar-fundacao')) {
+    const btn = document.createElement('button');
+    btn.id = 'btn-encerrar-fundacao';
+    btn.innerHTML = '✅ Concluir Fundação de Elenco';
+    btn.style.cssText = 'position:fixed; bottom:30px; right:30px; background:#10b981; color:#fff; font-weight:bold; font-size:1.1em; padding:15px 25px; border-radius:50px; border:none; cursor:pointer; box-shadow:0 4px 15px rgba(0,0,0,0.5); z-index:9999; animation: pulse 2s infinite;';
+    btn.onclick = async function() {
+      await showCustomModal({
+        title: 'Fundação Concluída!',
+        message: 'A partir de agora, novas contratações afetarão seu Livro-Caixa e orçamento normalmente.',
+        confirmText: 'Entendido',
+        icon: '🎉'
+      });
+      window.isModoFundacao = false;
+      this.remove();
+      pesquisar();
+    };
+    document.body.appendChild(btn);
+  }
+  
+  showCustomModal({
+    title: 'Modo Fundação Ativado!',
+    message: 'Busque os jogadores que <b>já pertencem</b> ao seu clube na vida real e adicione-os gratuitamente como Nativos.',
+    confirmText: 'Vamos lá!',
+    icon: '✨'
+  });
+};
+
+window.adicionarJogadorFundacao = async function(idx, btn) {
+  if (!window.bdJogadores || !window.bdJogadores[idx]) return;
+  const j = window.bdJogadores[idx];
+  const s = getSeason();
+  if (!s.jogadores) s.jogadores = [];
+  
+  let defaultCont = '';
+  if (j.contAnos || j.contMeses) {
+    if (j.contAnos) defaultCont += j.contAnos + 'a ';
+    if (j.contMeses) defaultCont += j.contMeses + 'm';
+    defaultCont = defaultCont.trim();
+  } else {
+    defaultCont = '1a';
+  }
+
+  let anosStr = await showCustomModal({
+    type: 'prompt',
+    title: 'Tempo de Contrato',
+    message: `Duração do contrato para <b>${j.primeiroNome} ${j.sobrenome}</b>?<br><br><span style="font-size:0.85em;color:#cbd5e1">Formatos aceitos: "2", "2a", "6m", "2a 6m"</span>`,
+    defaultValue: defaultCont,
+    showCancel: true,
+    confirmText: 'Salvar',
+    icon: '📝'
+  });
+  
+  if (!anosStr) return;
+  
+  // Analisa a string para descobrir anos e meses ("2a 6m" ou "2" ou "6m")
+  let contAnos = 0;
+  let contMeses = 0;
+  
+  const matchAnos = anosStr.match(/(\d+)\s*[aA]/);
+  const matchMeses = anosStr.match(/(\d+)\s*[mM]/);
+  
+  if (matchAnos) contAnos = parseInt(matchAnos[1]);
+  if (matchMeses) contMeses = parseInt(matchMeses[1]);
+  
+  // Se digitou apenas um número (ex: "3"), assumimos anos
+  if (!matchAnos && !matchMeses) {
+    const num = parseInt(anosStr.replace(/\D/g, ''));
+    if (!isNaN(num) && num > 0) contAnos = num;
+    else contAnos = 1;
+  }
+  
+  let novoJ = cloneData(j);
+  novoJ.id = Date.now().toString(36) + Math.random().toString(36).substr(2);
+  novoJ.situacao = 'Elenco';
+  novoJ.status = 'Reserva';
+  novoJ.num = Math.floor(Math.random() * 99) + 1;
+  novoJ.contAnos = contAnos;
+  novoJ.contMeses = contMeses;
+  novoJ.salario = novoJ.salario || 0;
+  novoJ.multa = novoJ.multa || 0;
+  
+  s.jogadores.push(novoJ);
+  salvarDados();
+  
+  if (btn) {
+    btn.outerHTML = `<button style="position:absolute;top:5px;right:5px;background:#334155;color:#94a3b8;border:none;padding:4px 8px;border-radius:4px;font-weight:700;cursor:not-allowed;font-size:.8em;z-index:10;" disabled>✅ Adicionado</button>`;
+  }
+};
+
+window.voltarDashboard = function() {
+  const shell = document.getElementById('app-shell');
+  if (shell) {
+    shell.classList.remove('is-ready');
+    shell.setAttribute('aria-hidden', 'true');
+  }
+  
+  const savesScreen = document.getElementById('dashboard-saves-screen');
+  if (savesScreen) {
+    savesScreen.classList.remove('is-hidden');
+  }
+  
+  if (typeof renderizarTelaDeElencos === 'function') {
+    renderizarTelaDeElencos();
+  }
 };

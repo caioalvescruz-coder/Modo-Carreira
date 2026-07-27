@@ -19,8 +19,7 @@
         <div class="auth-brand">MANAGER FC 26</div>
         <h1 id="auth-title">Seu modo carreira, sincronizado ⚽☁️</h1>
         <p>
-          Entre com Google para acessar seus elencos, temporadas e estatísticas em qualquer
-          navegador.
+          Entre com Google para acessar seus elencos, temporadas e estatísticas no PC e no celular! 📱💻
         </p>
         <label class="age-confirm"
           ><input type="checkbox" id="age-confirm" /> Declaro ter 18 anos ou mais.</label
@@ -52,28 +51,30 @@
       </header>
       <div class="dashboard-body">
         <div id="dashboard-grid" class="dashboard-grid"></div>
-    <section id="dashboard-screen" class="dashboard-screen is-hidden" aria-labelledby="dash-title" aria-live="polite">
-      <div class="dash-container">
-        <header class="dash-header">
-          <div class="dash-brand">MANAGER FC 26</div>
-          <div class="dash-user">
-            <span id="dash-account-email" class="dash-email">Carregando...</span>
-            <button type="button" class="btn-logout" onclick="ManagerAuth.signOut()">Sair</button>
+      </div>
+    </section>
+    <section id="dashboard-saves-screen" class="auth-screen is-hidden" aria-labelledby="dash-title" aria-live="polite">
+      <div class="auth-card" style="max-width: 800px; width: 100%;">
+        <header style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px; padding-bottom:15px; border-bottom:1px solid #334155;">
+          <div style="font-size:1.5em; font-weight:900; color:#fbbf24;">MANAGER FC 26</div>
+          <div style="display:flex; align-items:center; gap:15px;">
+            <span id="dash-account-email" style="color:#94a3b8; font-size:0.9em;">Carregando...</span>
+            <button type="button" onclick="ManagerAuth.signOut()" style="background:transparent; border:1px solid #ef4444; color:#ef4444; padding:5px 15px; border-radius:4px; cursor:pointer;">Sair</button>
           </div>
         </header>
         
-        <main class="dash-main">
-          <h2 id="dash-title" class="dash-title">Seus Saves</h2>
+        <main>
+          <h2 id="dash-title" class="auth-subtitle" style="text-align:left; margin-bottom:20px;">Seus Saves</h2>
           
-          <div class="dash-actions">
-            <button class="btn-novo-save" onclick="iniciarNovaCarreira()">+ Iniciar Novo Modo Carreira</button>
-            <div style="display:flex;gap:10px">
-              <button class="btn-secundario" onclick="exportarBackup()" title="Baixar todos os seus elencos e carreiras para um arquivo seguro">💾 Backup Geral</button>
-              <button class="btn-secundario" onclick="$('#backupFileInput').click()" title="Restaurar backup geral">📥 Importar Save</button>
+          <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:15px; margin-bottom:30px;">
+            <button onclick="iniciarNovaCarreira()" style="background:#10b981; color:#fff; border:none; padding:10px 20px; border-radius:6px; font-weight:bold; cursor:pointer;">+ Iniciar Novo Modo Carreira</button>
+            <div style="display:flex; gap:10px">
+              <button onclick="exportarBackup()" title="Baixar todos os seus elencos e carreiras para um arquivo seguro" style="background:#334155; color:#fff; border:none; padding:10px 15px; border-radius:6px; cursor:pointer;">💾 Backup Geral</button>
+              <button onclick="document.getElementById('backupFileInput').click()" title="Restaurar backup geral" style="background:#334155; color:#fff; border:none; padding:10px 15px; border-radius:6px; cursor:pointer;">📥 Importar Save</button>
             </div>
           </div>
 
-          <div id="dash-saves-grid" class="dash-grid">
+          <div id="dash-saves-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:15px;">
             <!-- Renderizado via JS -->
           </div>
         </main>

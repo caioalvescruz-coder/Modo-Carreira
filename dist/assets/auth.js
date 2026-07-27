@@ -64,17 +64,40 @@ function showGate(message = '') {
   setAuthStatus(message);
 }
 
-function showApp(user) {
+function showSavesScreen(user) {
   currentUser = user;
   const gate = byId('auth-screen');
   if (gate) gate.classList.add('is-hidden');
+  
+  const savesScreen = byId('dashboard-saves-screen');
+  if (savesScreen) {
+    savesScreen.classList.remove('is-hidden');
+  }
+
+  // Preenche o email na tela de saves e na tela principal
+  const dashAccountEmail = byId('dash-account-email');
+  if (dashAccountEmail) dashAccountEmail.textContent = user.email || 'Conta Google';
+  
+  const accountEmail = byId('account-email');
+  if (accountEmail) accountEmail.textContent = user.email || 'Conta Google';
+
+  // Chama a renderização dos elencos (definida no app-render.js)
+  if (typeof renderizarTelaDeElencos === 'function') {
+    renderizarTelaDeElencos();
+  }
+}
+
+window.enterAppShell = function() {
+  const savesScreen = byId('dashboard-saves-screen');
+  if (savesScreen) {
+    savesScreen.classList.add('is-hidden');
+  }
+  
   const shell = byId('app-shell');
   if (shell) {
     shell.classList.add('is-ready');
     shell.setAttribute('aria-hidden', 'false');
   }
-  const accountEmail = byId('account-email');
-  if (accountEmail) accountEmail.textContent = user.email || 'Conta Google';
 }
 
 async function loadCareer(user) {
@@ -90,12 +113,12 @@ async function loadCareer(user) {
     if (docSnap.exists()) {
       const data = docSnap.data();
       const selectedState = app.attachUser(user.uid, data.state || null);
-      showApp(user);
+      showSavesScreen(user);
       setAuthStatus('');
       setSyncStatus('Sincronizado', 'synced');
     } else {
       const selectedState = app.attachUser(user.uid, null);
-      showApp(user);
+      showSavesScreen(user);
       setAuthStatus('');
       pendingState = selectedState;
       await flushSave();
@@ -103,7 +126,7 @@ async function loadCareer(user) {
   } catch (error) {
     console.error('Falha ao carregar a carreira.', error);
     const localState = app.attachUser(user.uid, null);
-    showApp(user);
+    showSavesScreen(user);
     setSyncStatus('Somente neste dispositivo', 'error');
     setAuthStatus('');
     pendingState = localState;

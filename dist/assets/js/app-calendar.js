@@ -283,9 +283,31 @@ window.abrirViewRelatorio = (id) => {
   if (!e || !e.relatorio) return;
   const r = e.relatorio,
     cF = window.formacoesTaticas[r.f || '4-3-3'];
-  let mH = Object.keys(r.l)
+  
+  // Resolver lineup IDs em objetos de jogador (mesma lógica do renderizarTaticas)
+  const resolvedLineup = {};
+  if (r.l) {
+    for (let k in r.l) {
+      let j = r.l[k];
+      if (!j) continue;
+      let ref;
+      if (typeof j === 'string' || typeof j === 'number') {
+        ref = s.jogadores.find(
+          (p) =>
+            p.id == j ||
+            (p.primeiroNome || '') + (p.sobrenome || '') == j ||
+            (p.primeiroNome || '') + (p.sobrenome || '') == String(j).replace('undefined', ''),
+        );
+      } else {
+        ref = j; // já é um objeto
+      }
+      if (ref) resolvedLineup[k] = ref;
+    }
+  }
+  
+  let mH = Object.keys(resolvedLineup)
     .map((k) => {
-      let l = r.l[k],
+      let l = resolvedLineup[k],
         rj = r.j.find((x) => x.n === `${l.primeiroNome} ${l.sobrenome}`),
         b = '';
       if (rj) {
@@ -306,15 +328,29 @@ window.abrirViewRelatorio = (id) => {
   let sub = r.j
     .filter((x) => x.s)
     .map((x) =>
-      `${x.n} ${x.g > 0 || x.a > 0 ? '(' + (x.g > 0 ? `⚽${x.g > 1 ? x.g + 'x' : ''}` : '') + (x.g > 0 && x.a > 0 ? ' ' : '') + (x.a > 0 ? `👟${x.a > 1 ? x.a + 'x' : ''}` : '') + ')' : ''}`.trim(),
+      `${x.n} ${x.g > 0 || x.a > 0 || x.cv > 0 ? '(' + (x.g > 0 ? `⚽${x.g > 1 ? x.g + 'x' : ''}` : '') + (x.g > 0 && x.a > 0 ? ' ' : '') + (x.a > 0 ? `👟${x.a > 1 ? x.a + 'x' : ''}` : '') + (x.cv > 0 ? ' 🟥' : '') + ')' : ''}`.trim(),
     );
+  
+  // Gerar Súmula detalhada
+  const gols = r.j.filter(x => x.g > 0).map(x => `⚽ ${x.n} ${x.g > 1 ? '(' + x.g + 'x)' : ''}`);
+  const asts = r.j.filter(x => x.a > 0).map(x => `👟 ${x.n} ${x.a > 1 ? '(' + x.a + 'x)' : ''}`);
+  const cvs = r.j.filter(x => x.cv > 0).map(x => `🟥 ${x.n}`);
+  
+  let sumulaHtml = '<div style="background:#0f172a;padding:12px;border-radius:8px;border:1px solid #1e293b;margin-top:10px">';
+  sumulaHtml += '<div style="color:#fbbf24;font-weight:900;text-transform:uppercase;font-size:.8em;letter-spacing:1px;margin-bottom:8px;text-align:center">📋 Súmula da Partida</div>';
+  if (gols.length > 0) sumulaHtml += `<div style="margin-bottom:6px;color:#10b981;font-size:.9em">${gols.join('<br>')}</div>`;
+  if (asts.length > 0) sumulaHtml += `<div style="margin-bottom:6px;color:#3b82f6;font-size:.9em">${asts.join('<br>')}</div>`;
+  if (cvs.length > 0) sumulaHtml += `<div style="margin-bottom:6px;color:#ef4444;font-size:.9em">${cvs.join('<br>')}</div>`;
+  if (gols.length === 0 && asts.length === 0 && cvs.length === 0) sumulaHtml += '<div style="color:#64748b;font-size:.9em;text-align:center"><i>Nenhuma estatística registrada.</i></div>';
+  sumulaHtml += '</div>';
+  
   $('#view-rel-header').innerHTML =
     `<div style="font-size:.7em;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px">${e.data.split('-').reverse().join('/')} - ${e.campeonato}</div><div style="font-size:1.3em;color:#fbbf24">${e.adversario}</div><div style="font-size:2em;color:#fff;margin-top:5px;font-weight:900;text-shadow:0 2px 4px rgba(0,0,0,.5)">${e.gp} x ${e.gc}</div>`;
   $('#view-rel-pitch').innerHTML =
     `<div class="pitch-line" style="top:50%;left:0;width:100%;"></div><div class="center-circle"></div>${mH}`;
-  $('#view-rel-subs').innerHTML = sub.length
+  $('#view-rel-subs').innerHTML = (sub.length
     ? `⬆️ <b>Entraram:</b> ${sub.join(', ')}`
-    : '<i>Nenhuma substituição.</i>';
+    : '<i>Nenhuma substituição.</i>') + sumulaHtml;
   $('#btn-del-rel').onclick = () => {
     if (confirm('Excluir relatório e reverter estatísticas?')) {
       reverterRelatorio(e);
