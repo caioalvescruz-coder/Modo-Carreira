@@ -978,37 +978,46 @@ tr.alerta-contrato td:first-child {
 }
 
 .taticas-list {
-    background: #151d2e;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #2d3748;
+    background: linear-gradient(145deg, rgba(21, 29, 46, 0.95), rgba(15, 23, 42, 0.98));
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(51, 65, 85, 0.6);
     max-height: 750px;
     overflow-y: auto;
-    width: 350px
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 .taticas-list-header {
     display: grid;
     grid-template-columns: 50px 1fr 30px 40px 40px 70px;
-    gap: 5px;
-    font-weight: 700;
+    gap: 6px;
+    font-weight: 800;
     color: #fbbf24;
-    border-bottom: 2px solid #2d3748;
+    border-bottom: 1px solid rgba(251, 191, 36, 0.25);
     padding-bottom: 10px;
     margin-bottom: 10px;
-    font-size: .8em;
-    cursor: pointer
+    font-size: 0.8em;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .taticas-list-item {
     display: grid;
     grid-template-columns: 50px 1fr 30px 40px 40px 70px;
-    gap: 5px;
+    gap: 6px;
     align-items: center;
-    border-bottom: 1px solid #2d3748;
-    padding: 10px 0;
-    font-size: .85em;
-    cursor: grab
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 8px 4px;
+    font-size: 0.85em;
+    cursor: grab;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.taticas-list-item:hover {
+    background: rgba(30, 41, 59, 0.6);
 }
 
 .pos-marker.occupied {
