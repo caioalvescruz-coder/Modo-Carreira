@@ -514,30 +514,38 @@ function renderizarEstatisticas(sourceSeason = null) {
   pStats.sort((a, b) => {
     let vA, vB;
     if (
-      ['pos', 'sobrenome', 'ovr', 'valor', 'salario', 'evolucao', 'idade'].includes(sortStatsField)
+      ['pos', 'positions', 'sobrenome', 'ovr', 'valor', 'salario', 'evolucao', 'idade'].includes(sortStatsField)
     ) {
-      vA = a.j[sortStatsField];
-      vB = b.j[sortStatsField];
-      if (sortStatsField === 'sobrenome') {
-        vA = vA.toLowerCase();
-        vB = vB.toLowerCase();
-      } else if (
-        sortStatsField === 'ovr' ||
-        sortStatsField === 'valor' ||
-        sortStatsField === 'salario' ||
-        sortStatsField === 'idade'
-      ) {
-        vA = +vA;
-        vB = +vB;
-      } else if (sortStatsField === 'evolucao') {
-        inicializarBases(a.j);
-        inicializarBases(b.j);
-        vA = a.j.ovr - a.j.baseOvr;
-        vB = b.j.ovr - b.j.baseOvr;
-      } else {
+      if (sortStatsField === 'positions') {
+        const secA = a.j.positions ? a.j.positions.filter((p) => p !== a.j.pos)[0] || '' : '';
+        const secB = b.j.positions ? b.j.positions.filter((p) => p !== b.j.pos)[0] || '' : '';
         const o = ['GOL', 'LE', 'ZAG', 'LD', 'VOL', 'ME', 'MC', 'MEI', 'MD', 'PE', 'ATA', 'PD'];
-        vA = o.indexOf(vA);
-        vB = o.indexOf(vB);
+        vA = o.indexOf(secA); if (vA === -1) vA = 999;
+        vB = o.indexOf(secB); if (vB === -1) vB = 999;
+      } else {
+        vA = a.j[sortStatsField];
+        vB = b.j[sortStatsField];
+        if (sortStatsField === 'sobrenome') {
+          vA = (vA || '').toLowerCase();
+          vB = (vB || '').toLowerCase();
+        } else if (
+          sortStatsField === 'ovr' ||
+          sortStatsField === 'valor' ||
+          sortStatsField === 'salario' ||
+          sortStatsField === 'idade'
+        ) {
+          vA = +vA;
+          vB = +vB;
+        } else if (sortStatsField === 'evolucao') {
+          inicializarBases(a.j);
+          inicializarBases(b.j);
+          vA = a.j.ovr - a.j.baseOvr;
+          vB = b.j.ovr - b.j.baseOvr;
+        } else {
+          const o = ['GOL', 'LE', 'ZAG', 'LD', 'VOL', 'ME', 'MC', 'MEI', 'MD', 'PE', 'ATA', 'PD'];
+          vA = o.indexOf(vA);
+          vB = o.indexOf(vB);
+        }
       }
     } else {
       vA =
@@ -590,6 +598,10 @@ function renderizarEstatisticas(sourceSeason = null) {
           : dO < 0
             ? `<span style="color:#ef4444;font-weight:900;">${dO}</span>`
             : `<span style="color:#475569">-</span>`;
+
+      const posClass = j.pos === 'GOL' ? 'c-gol' : ['ZAG', 'LE', 'LD', 'CB', 'LB', 'RB', 'ADE', 'ADD'].includes(j.pos) ? 'c-def' : ['VOL', 'MC', 'MEI', 'MD', 'ME', 'CDM', 'CM', 'CAM', 'RM', 'LM'].includes(j.pos) ? 'c-mid' : 'c-atk';
+      const nameHtml = `${j.primeiroNome ? `<span style="font-size:0.85em;color:#cbd5e1;">${j.primeiroNome}</span> ` : ''}<span style="font-weight:900;color:#fbbf24;">${j.sobrenome}</span>`;
+
       if (!isRead) {
         let jEst =
           j.est && j.est[editComp]
@@ -612,9 +624,9 @@ function renderizarEstatisticas(sourceSeason = null) {
         const inp = (f) =>
           `<input type="number" value="${jEst[f] || 0}" style="width:35px;text-align:center;background:#0f172a;color:#fbbf24;border:1px solid #334155;border-radius:4px;padding:2px;" onblur="salvarStat(${i},'${editComp}','${f}',this.value)">`;
         const inpMed = `<input type="number" step="0.1" min="5.0" max="10.0" value="${med}" style="width:45px;text-align:center;background:#0f172a;color:#fbbf24;border:1px solid #334155;border-radius:4px;padding:2px;" onblur="salvarStat(${i},'${editComp}','media',this.value)">`;
-        return `<tr><td><div class="pos-stat-box" style="font-size:.8em;padding:2px 4px;">${j.pos}</div></td><td class="nome-col">${j.primeiroNome} <span>${j.sobrenome}</span></td><td style="color:#cbd5e1">${formatMoney(j.valor)}</td><td style="color:#cbd5e1">${formatMoney(j.salario)}</td><td>${j.idade}</td><td><div class="stat-box ${getBg(j.ovr)}" style="display:inline-block;padding:2px 4px;">${j.ovr}</div></td><td>${dH}</td><td>${inp('jogos')}</td><td>${inp('gols')}</td><td>${inp('ast')}</td><td>${inp('sg')}</td><td>${inp('ca')}</td><td>${inp('cv')}</td><td>${inpMed}</td><td style="font-weight:700;color:#fbbf24">${st.impacto}</td></tr>`;
+        return `<tr><td><div class="pos-stat-box ${posClass}" style="font-size:.8em;padding:2px 4px;border-radius:4px;display:inline-block;">${j.pos}</div></td><td class="nome-col">${nameHtml}</td><td style="color:#cbd5e1">${formatMoney(j.valor)}</td><td style="color:#cbd5e1">${formatMoney(j.salario)}</td><td>${j.idade}</td><td><div class="stat-box ${getBg(j.ovr)}" style="display:inline-block;padding:2px 4px;">${j.ovr}</div></td><td>${dH}</td><td>${inp('jogos')}</td><td>${inp('gols')}</td><td>${inp('ast')}</td><td>${inp('sg')}</td><td>${inp('ca')}</td><td>${inp('cv')}</td><td>${inpMed}</td><td style="font-weight:700;color:#fbbf24">${st.impacto}</td></tr>`;
       } else {
-        return `<tr><td><div class="pos-stat-box" style="font-size:.8em;padding:2px 4px;">${j.pos}</div></td><td class="nome-col">${j.primeiroNome} <span>${j.sobrenome}</span></td><td style="color:#cbd5e1">${formatMoney(j.valor)}</td><td style="color:#cbd5e1">${formatMoney(j.salario)}</td><td>${j.idade}</td><td><div class="stat-box ${getBg(j.ovr)}" style="display:inline-block;padding:2px 4px;">${j.ovr}</div></td><td>${dH}</td><td style="color:${st.jogos == 0 ? '#475569' : ''}">${st.jogos}</td><td style="color:${st.gols == 0 ? '#475569' : ''}">${st.gols}</td><td style="color:${st.ast == 0 ? '#475569' : ''}">${st.ast}</td><td style="color:${st.sg == 0 ? '#475569' : ''}">${st.sg}</td><td style="color:${st.ca == 0 ? '#475569' : ''}">${st.ca}</td><td style="color:${st.cv == 0 ? '#475569' : ''}">${st.cv}</td><td style="font-weight:700;color:${cN(+st.media)};">${st.media}</td><td style="font-weight:700;color:#fbbf24">${st.impacto}</td></tr>`;
+        return `<tr><td><div class="pos-stat-box ${posClass}" style="font-size:.8em;padding:2px 4px;border-radius:4px;display:inline-block;">${j.pos}</div></td><td class="nome-col">${nameHtml}</td><td style="color:#cbd5e1">${formatMoney(j.valor)}</td><td style="color:#cbd5e1">${formatMoney(j.salario)}</td><td>${j.idade}</td><td><div class="stat-box ${getBg(j.ovr)}" style="display:inline-block;padding:2px 4px;">${j.ovr}</div></td><td>${dH}</td><td style="color:${st.jogos == 0 ? '#475569' : ''}">${st.jogos}</td><td style="color:${st.gols == 0 ? '#475569' : ''}">${st.gols}</td><td style="color:${st.ast == 0 ? '#475569' : ''}">${st.ast}</td><td style="color:${st.sg == 0 ? '#475569' : ''}">${st.sg}</td><td style="color:${st.ca == 0 ? '#475569' : ''}">${st.ca}</td><td style="color:${st.cv == 0 ? '#475569' : ''}">${st.cv}</td><td style="font-weight:700;color:${cN(+st.media)};">${st.media}</td><td style="font-weight:700;color:#fbbf24">${st.impacto}</td></tr>`;
       }
     })
     .join('');
