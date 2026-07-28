@@ -442,33 +442,76 @@ function renderTimeline() {
   const s = getSeason();
   if (!s.dataAtual) s.dataAtual = '2025-07-01';
   let h = '';
+  const dows = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SÁB'];
+
   for (let i = -1; i <= 5; i++) {
     let d = addDays(s.dataAtual, i),
       p = d.split('-'),
       isH = i === 0,
       isJ = ['01', '07', '08'].includes(p[1]),
       isD = (p[1] === '08' && p[2] === '31') || (p[1] === '01' && p[2] === '31');
-    let ev = s.calendario.filter((e) => e.data === d),
-      evH = ev
-        .map((e) =>
-          e.relatorio
-            ? `<div class="tl-event" onclick="event.stopPropagation(); abrirViewRelatorio(${e.id})" style="background:#10b981;color:#fff;border-color:#047857;" title="Ver Relatório">${e.campeonato
-                .split(' ')
-                .map((w) => w[0])
-                .join('')} ${e.adversario.split(' ')[0]} (${e.gp}x${e.gc})</div>`
-            : `<div class="tl-event" onclick="abrirModalEvento('${d}',${e.id})">${e.campeonato
-                .split(' ')
-                .map((w) => w[0])
-                .join('')} ${e.adversario.split(' ')[0]}</div>`,
-        )
-        .join('');
-    const dow = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'][
-      new Date(d + 'T12:00:00').getDay()
-    ];
-    h += `<div class="tl-day ${isH ? 'hoje' : ''} ${isJ ? 'janela' : ''} ${isD ? 'deadline' : ''}" ${ev.length ? '' : `onclick="abrirModalEvento('${d}',null)"`}><div class="tl-date"><span style="font-size:0.8em;color:#94a3b8;margin-right:3px;">${dow},</span> ${p[2]}/${p[1]} ${isD ? '(FIM)' : ''}</div>${evH}</div>`;
+    let ev = s.calendario.filter((e) => e.data === d);
+
+    let evH = ev
+      .map((e) => {
+        let isHome = e.mando === 'C' || (e.adversario && e.adversario.includes('(C)'));
+        let advClean = e.adversario ? e.adversario.replace(/\s*\([CF]\)$/, '') : 'Jogo';
+        let compSigla = e.campeonato
+          ? e.campeonato
+              .split(' ')
+              .map((w) => w[0])
+              .join('')
+              .toUpperCase()
+          : '';
+
+        if (e.relatorio || (e.gp !== undefined && e.gp !== '' && e.gp !== null)) {
+          let win = +e.gp > +e.gc;
+          let draw = +e.gp === +e.gc;
+          let scoreBg = win ? '#10b981' : draw ? '#64748b' : '#ef4444';
+          return `<div class="tl-event played" onclick="event.stopPropagation(); abrirViewRelatorio(${e.id})" title="Ver Súmula">
+            <div class="tl-event-main">
+              <span class="tl-event-mando">${isHome ? '🏠' : '✈️'}</span>
+              <span class="tl-event-adv">${advClean}</span>
+            </div>
+            <div class="tl-event-meta">
+              <span class="tl-comp-badge">${compSigla}</span>
+              <span class="tl-score-badge" style="background:${scoreBg}">${e.gp}x${e.gc}</span>
+            </div>
+          </div>`;
+        } else {
+          return `<div class="tl-event upcoming" onclick="event.stopPropagation(); abrirModalEvento('${d}',${e.id})" title="Editar Jogo">
+            <div class="tl-event-main">
+              <span class="tl-event-mando">${isHome ? '🏠' : '✈️'}</span>
+              <span class="tl-event-adv">${advClean}</span>
+            </div>
+            <div class="tl-event-meta">
+              <span class="tl-comp-badge">${compSigla}</span>
+              <span class="tl-status-badge">JOGO</span>
+            </div>
+          </div>`;
+        }
+      })
+      .join('');
+
+    const dowStr = dows[new Date(d + 'T12:00:00').getDay()];
+    const dateFormatted = `${p[2]}/${p[1]}`;
+
+    h += `<div class="tl-day ${isH ? 'hoje' : ''} ${isJ ? 'janela' : ''} ${isD ? 'deadline' : ''} ${ev.length ? 'has-event' : ''}" ${ev.length ? '' : `onclick="abrirModalEvento('${d}',null)"`}>
+      <div class="tl-day-header">
+        <span class="tl-dow">${dowStr}</span>
+        <span class="tl-num">${dateFormatted}</span>
+      </div>
+      ${isH ? `<div class="tl-badge-hoje">HOJE</div>` : ''}
+      ${isD ? `<div class="tl-badge-deadline">FIM JANELA</div>` : ''}
+      <div class="tl-events-container">
+        ${evH || `<div class="tl-empty-day">+</div>`}
+      </div>
+    </div>`;
   }
+
   $('#timeline-bar').innerHTML =
-    `<button class="tl-btn" onclick="mudarDataManager(-1)">⬅️</button><div class="tl-days">${h}</div><button class="tl-btn" onclick="mudarDataManager(1)">➡️</button>`;
+    `<button class="tl-btn prev" onclick="mudarDataManager(-1)" title="Dia Anterior">❮</button><div class="tl-days">${h}</div><button class="tl-btn next" onclick="mudarDataManager(1)" title="Próximo Dia">❯</button>`;
+
   if (typeof InboxUI !== 'undefined') InboxUI.refresh();
 }
 
