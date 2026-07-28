@@ -244,21 +244,26 @@ function renderizar(skipF = false) {
 
   if (srt !== 'none')
     f.sort((a, b) => {
-      let A =
-          srt === 'pos'
-            ? pO.indexOf(a.pos)
-            : srt === 'sobrenome'
-              ? (a.sobrenome || '').toLowerCase()
-              : +a[srt],
-        B =
-          srt === 'pos'
-            ? pO.indexOf(b.pos)
-            : srt === 'sobrenome'
-              ? (b.sobrenome || '').toLowerCase()
-              : +b[srt];
-      if (srt === 'contAnos') {
+      let A, B;
+      if (srt === 'pos') {
+        A = pO.indexOf(a.pos);
+        B = pO.indexOf(b.pos);
+      } else if (srt === 'contAnos') {
         A = (parseInt(a.contAnos) || 0) * 12 + (parseInt(a.contMeses) || 0);
         B = (parseInt(b.contAnos) || 0) * 12 + (parseInt(b.contMeses) || 0);
+      } else if (srt === 'positions') {
+        const secA = a.positions ? a.positions.filter((p) => p !== a.pos)[0] || '' : '';
+        const secB = b.positions ? b.positions.filter((p) => p !== b.pos)[0] || '' : '';
+        A = pO.indexOf(secA);
+        B = pO.indexOf(secB);
+        if (A === -1) A = 999;
+        if (B === -1) B = 999;
+      } else if (['sobrenome', 'primeiroNome', 'situacao', 'status', 'clube', 'nacionalidade'].includes(srt)) {
+        A = (a[srt] || '').toString().toLowerCase();
+        B = (b[srt] || '').toString().toLowerCase();
+      } else {
+        A = parseFloat(a[srt]) || 0;
+        B = parseFloat(b[srt]) || 0;
       }
       return A < B ? (sortDir === 'asc' ? -1 : 1) : A > B ? (sortDir === 'asc' ? 1 : -1) : 0;
     });
@@ -319,13 +324,37 @@ function renderizar(skipF = false) {
       Reserva: 'RES',
       'Não Relacionado': 'N/R',
     };
-    const colG = `<colgroup>${modoEdicao || abaAtiva === 'mercado' || abaAtiva === 'base' ? '<col width="60">' : ''}<col width="75"><col><col width="60"><col width="65"><col width="65"><col width="100"><col width="100"><col width="100"><col width="110"><col width="75"></colgroup>`;
+
+    const tableCols = [
+      { key: 'pos', label: 'POS' },
+      { key: 'positions', label: 'SEC' },
+      { key: 'sobrenome', label: 'JOGADOR' },
+      { key: 'idade', label: 'ID.' },
+      { key: 'ovr', label: 'OVR' },
+      { key: 'pot', label: 'POT' },
+      { key: 'multa', label: 'MULTA' },
+      { key: 'valor', label: 'VALOR' },
+      { key: 'salario', label: 'SALÁRIO' },
+      { key: 'situacao', label: 'SITUAÇÃO' },
+      { key: 'status', label: 'STATUS' },
+    ];
+
+    const colG = `<colgroup><col width="85"><col width="65"><col width="65"><col><col width="50"><col width="60"><col width="60"><col width="90"><col width="90"><col width="90"><col width="110"><col width="75"></colgroup>`;
+
+    const ths = `<th style="text-align:center;">Ação</th>` + tableCols
+      .map((col) => {
+        const isSorted = srt === col.key;
+        const arrow = isSorted ? (sortDir === 'desc' ? ' ⬇️' : ' ⬆️') : '';
+        return `<th style="cursor:pointer;user-select:none;text-align:center;" onclick="ordenarPelaTabela('${col.key}')" title="Ordenar por ${col.label}">${col.label}${arrow}</th>`;
+      })
+      .join('');
+
     c.innerHTML =
       tabsHtml +
       paginationHtml +
-      `<div class="table-container"><table class="table-view">${colG}<thead><tr>${modoEdicao || abaAtiva === 'mercado' || abaAtiva === 'base' ? '<th>Ação</th>' : ''}${['pos', 'sobrenome', 'idade', 'ovr', 'pot', 'multa', 'valor', 'salario'].map((x) => `<th style="cursor:pointer;" onclick="ordenarPelaTabela('${x}')">${x === 'pos' ? 'POSIÇÃO' : x.toUpperCase()}${srt === x ? (sortDir === 'desc' ? ' ⬇️' : ' ⬆️') : ''}</th>`).join('')}<th>Situação</th><th>Status</th></tr></thead><tbody>` +
+      `<div class="table-container"><table class="table-view">${colG}<thead><tr>${ths}</tr></thead><tbody>` +
       (f.length === 0
-        ? `<tr><td colspan="11" style="text-align:center;padding:40px;color:#94a3b8;font-size:1.1em;font-weight:bold;">Nenhum jogador encontrado com estes filtros.</td></tr>`
+        ? `<tr><td colspan="12" style="text-align:center;padding:40px;color:#94a3b8;font-size:1.1em;font-weight:bold;">Nenhum jogador encontrado com estes filtros.</td></tr>`
         : paginados
             .map((j) => {
               inicializarBases(j);
@@ -338,7 +367,27 @@ function renderizar(skipF = false) {
                 tblImg = j.img
                   ? `<img src="${j.img}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='assets/camisa.png';" style="width:24px;height:24px;vertical-align:middle;object-fit:contain;margin-right:5px;border-radius:4px">`
                   : tblSvg;
-              return `<tr class="${al ? 'alerta-contrato' : ''}">${modoEdicao || abaAtiva === 'mercado' || abaAtiva === 'base' ? `<td>${modoEdicao ? `<input type="checkbox" style="transform:scale(1.3);cursor:pointer;margin-right:5px" ${selCards.includes(i) ? 'checked' : ''} onclick="toggleSel(${i})"> <button style="background:transparent;border:none;cursor:pointer;font-size:1.2em;" onclick="excluirJogador(${i})">🗑️</button>${abaAtiva === 'jogadores' || abaAtiva === 'base' ? `<button style="background:transparent;border:none;cursor:pointer;font-size:1.2em;margin-left:5px;" onclick="abrirModalNegociar(${i})">🤝</button>` : ''}` : abaAtiva === 'mercado' && subAbaMercado === 'alvos' && !modoEdicao ? `<button style="background:#15803d;color:#fff;border:none;padding:4px 8px;border-radius:4px;cursor:pointer;font-weight:700;font-size:.8em;" onclick="abrirModalContratar(${i})">🤝 Contratar</button>` : abaAtiva === 'base' && !modoEdicao ? `<button style="background:#3b82f6;color:#fff;border:none;padding:4px 8px;border-radius:4px;cursor:pointer;font-weight:700;font-size:.8em;" onclick="abrirModalPromover(${i})">⬆️</button>` : ''}</td>` : ''}<td><div class="pos-stat-box" style="font-size:.9em;padding:2px 4px;">${j.pos}</div></td><td class="nome-col">${tblImg}${j.primeiroNome} <span>${j.sobrenome}</span></td><td>${j.idade}</td><td><div class="stat-box ${getBg(j.ovr)}" style="display:inline-block;min-width:25px;padding:2px;">${j.ovr}${renderDeltaSpan(j, 'ovr', null)}</div></td><td><div class="stat-box ${getBg(abaAtiva === 'base' ? j.potMax : j.pot)}" style="display:inline-block;min-width:25px;padding:2px;">${abaAtiva === 'base' ? `${j.potMin}-${j.potMax} ${renderDeltaSpan(j, 'potMax', null)}` : `${j.pot}${renderDeltaSpan(j, 'pot', null)}`}</div></td><td>${formatMoney(j.multa)}</td><td>${formatMoney(j.valor)}</td><td>${formatMoney(j.salario)}</td><td><div class="status-faixa" style="margin:0;padding:2px 4px;font-size:.75em;background:${cSit[j.situacao] || '#15803d'}">${j.situacao}</div></td><td>${stHtml}</td></tr>`;
+
+              let acaoTd = '';
+              if (modoEdicao) {
+                acaoTd = `<td><input type="checkbox" style="transform:scale(1.2);cursor:pointer;margin-right:3px" ${selCards.includes(i) ? 'checked' : ''} onclick="toggleSel(${i})"> <button style="background:transparent;border:none;cursor:pointer;font-size:1.1em;" onclick="excluirJogador(${i})" title="Excluir">🗑️</button>${abaAtiva === 'jogadores' || abaAtiva === 'base' ? `<button style="background:transparent;border:none;cursor:pointer;font-size:1.1em;margin-left:3px;" onclick="abrirModalNegociar(${i})" title="Negociar">🤝</button>` : ''}</td>`;
+              } else if (abaAtiva === 'jogadores') {
+                acaoTd = `<td>${['Elenco', 'Emprest. - OUT', 'Vender', 'Emprestar'].includes(j.situacao) ? `<button onclick="abrirModalNegociar(${i})" title="Negociar / Vender / Emprestar" style="padding:3px 8px;background:#0284c7;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:0.75em;font-weight:bold;">💰 Negociar</button>` : '<span style="color:#64748b">-</span>'}</td>`;
+              } else if (abaAtiva === 'mercado' && subAbaMercado === 'alvos') {
+                acaoTd = `<td><button style="background:#15803d;color:#fff;border:none;padding:3px 8px;border-radius:4px;cursor:pointer;font-weight:700;font-size:.75em;" onclick="abrirModalContratar(${i})">🤝 Contratar</button></td>`;
+              } else if (abaAtiva === 'base') {
+                acaoTd = `<td><button style="background:#3b82f6;color:#fff;border:none;padding:3px 8px;border-radius:4px;cursor:pointer;font-weight:700;font-size:.75em;" onclick="abrirModalPromover(${i})">⬆️ Promover</button></td>`;
+              } else {
+                acaoTd = `<td><span style="color:#64748b">-</span></td>`;
+              }
+
+              const posClass = j.pos === 'GOL' ? 'c-gol' : ['ZAG', 'LE', 'LD', 'CB', 'LB', 'RB', 'ADE', 'ADD'].includes(j.pos) ? 'c-def' : ['VOL', 'MC', 'MEI', 'MD', 'ME', 'CDM', 'CM', 'CAM', 'RM', 'LM'].includes(j.pos) ? 'c-mid' : 'c-atk';
+
+              const secPos = (j.positions && j.positions.length) ? j.positions.filter((p) => p !== j.pos)[0] : null;
+              const secPosClass = secPos ? (secPos === 'GOL' ? 'c-gol' : ['ZAG', 'LE', 'LD', 'CB', 'LB', 'RB', 'ADE', 'ADD'].includes(secPos) ? 'c-def' : ['VOL', 'MC', 'MEI', 'MD', 'ME', 'CDM', 'CM', 'CAM', 'RM', 'LM'].includes(secPos) ? 'c-mid' : 'c-atk') : '';
+              const secPosHtml = secPos ? `<div class="pos-stat-box ${secPosClass}" style="font-size:.85em;padding:2px 5px;border-radius:4px;">${secPos}</div>` : `<span style="color:#64748b">-</span>`;
+
+              return `<tr class="${al ? 'alerta-contrato' : ''}">${acaoTd}<td><div class="pos-stat-box ${posClass}" style="font-size:.85em;padding:2px 5px;border-radius:4px;">${j.pos}</div></td><td>${secPosHtml}</td><td class="nome-col">${tblImg}${j.primeiroNome} <span>${j.sobrenome}</span></td><td>${j.idade}</td><td><div class="stat-box ${getBg(j.ovr)}" style="display:inline-block;min-width:25px;padding:2px;">${j.ovr}${renderDeltaSpan(j, 'ovr', null)}</div></td><td><div class="stat-box ${getBg(abaAtiva === 'base' ? j.potMax : j.pot)}" style="display:inline-block;min-width:25px;padding:2px;">${abaAtiva === 'base' ? `${j.potMin}-${j.potMax} ${renderDeltaSpan(j, 'potMax', null)}` : `${j.pot}${renderDeltaSpan(j, 'pot', null)}`}</div></td><td>${formatMoney(j.multa)}</td><td>${formatMoney(j.valor)}</td><td>${formatMoney(j.salario)}</td><td><div class="status-faixa" style="margin:0;padding:2px 4px;font-size:.75em;background:${cSit[j.situacao] || '#15803d'}">${j.situacao}</div></td><td>${stHtml}</td></tr>`;
             })
             .join('')) +
       `</tbody></table></div>` +

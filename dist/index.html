@@ -378,6 +378,7 @@
                 </button>
               </div>
             </div>
+            <div class="filtro-linha" id="filtro-pe" style="white-space: nowrap; margin: 0 5px;"></div>
             <div class="sort-area">
               <select
                 id="sort-select"
@@ -388,6 +389,7 @@
               >
                 <option value="none">Ordernar por...</option>
                 <option value="pos">Posição</option>
+                <option value="positions">Pos. Secundária</option>
                 <option value="sobrenome">Sobrenome</option>
                 <option value="idade">Idade</option>
                 <option value="valor">Valor</option>
@@ -396,6 +398,8 @@
                 <option value="pot">POT</option>
                 <option value="contAnos">Contrato</option>
                 <option value="multa">Multa</option>
+                <option value="situacao">Situação</option>
+                <option value="status">Status</option>
               </select>
               <button class="filtro-btn" onclick="toggleSortDirection()" title="Inverter Ordem">
                 ⬆️/⬇️
@@ -429,21 +433,15 @@
             <div
               style="
                 display: flex;
-                flex-wrap: nowrap;
+                flex-wrap: wrap;
                 gap: 8px;
                 width: 100%;
-                overflow-x: auto;
                 padding-bottom: 4px;
               "
             >
               <div
                 class="filtro-linha"
                 id="filtro-pos"
-                style="flex: auto; white-space: nowrap"
-              ></div>
-              <div
-                class="filtro-linha"
-                id="filtro-pe"
                 style="flex: auto; white-space: nowrap"
               ></div>
               <div

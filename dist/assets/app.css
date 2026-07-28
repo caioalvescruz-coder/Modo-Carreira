@@ -277,12 +277,22 @@ h1 {
 .top-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     justify-content: space-between;
-    align-items: stretch;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #1e293b;
-    padding-bottom: 10px
+    align-items: center;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 12px;
+}
+
+.top-row #filtro-pe {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(15, 23, 42, 0.7);
+    padding: 3px 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(51, 65, 85, 0.7);
 }
 
 .search-area {
