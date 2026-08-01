@@ -1,0 +1,47 @@
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 15px;
+}
+
+.app-header h1 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.team-info {
+  text-align: right;
+}
+
+.team-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.snapshot-date {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.loading, .error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.error {
+  color: var(--color-red);
+}
