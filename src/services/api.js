@@ -11,3 +11,15 @@ export async function fetchDatabase() {
         return null;
     }
 }
+
+export async function fetchTrackerStats() {
+    try {
+        const response = await fetch('/data/tracker_stats.json');
+        if (!response.ok) return {};
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.warn('Tracker stats not available:', error);
+        return {};
+    }
+}

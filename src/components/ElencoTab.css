@@ -1,0 +1,255 @@
+.elenco-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.elenco-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.elenco-header h2 {
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.view-toggles button {
+  background: transparent;
+  border: 1px solid #333;
+  color: #888;
+  padding: 5px 15px;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 4px;
+}
+
+.view-toggles button.active {
+  background: #00ff66;
+  color: #000;
+  border-color: #00ff66;
+  font-weight: bold;
+}
+
+.overview-panels {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.panel {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.panel h3 {
+  font-size: 12px;
+  color: #888;
+  margin-top: 0;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.panel-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.val-green { color: #00ff66; font-weight: bold; }
+.val-yellow { color: #fbbf24; font-weight: bold; }
+.val-white { color: #fff; font-weight: bold; }
+
+.highlight-player {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ovr-mini, .pot-mini {
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #000;
+}
+
+.ovr-high { background: #00ff66; }
+.ovr-med { background: #fbbf24; }
+.ovr-low { background: #ef4444; }
+
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-col {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stat-title {
+  font-size: 10px;
+  color: #666;
+}
+
+.stat-person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.silhouette {
+  font-size: 24px;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.person-name {
+  font-size: 12px;
+  color: #fff;
+}
+
+.person-val {
+  font-size: 16px;
+  font-weight: bold;
+  color: #00ff66;
+}
+
+.sector-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+
+.sector-label { width: 30px; color: #888; }
+
+.bar-bg {
+  flex: 1;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+}
+
+.sector-value { width: 20px; text-align: right; color: #fff; font-weight: bold; }
+
+.filters-bar {
+  display: flex;
+  background: #111;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  gap: 30px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-group span {
+  color: #ea580c; /* Orange slash from screenshot */
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.filter-group button {
+  background: #222;
+  border: 1px solid #333;
+  color: #888;
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.filter-group button.active {
+  background: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+.data-table {
+  background: #111;
+  border-radius: 8px;
+  border: 1px solid #333;
+  overflow: hidden;
+}
+
+.data-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.data-table th {
+  padding: 15px;
+  font-size: 11px;
+  color: #888;
+  border-bottom: 1px solid #333;
+  font-weight: normal;
+}
+
+.data-table td {
+  padding: 12px 15px;
+  font-size: 13px;
+  border-bottom: 1px solid #222;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.data-table tr:hover td {
+  background: #1a1a1a;
+}
+
+.pos-badge {
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #000;
+}
+
+.pos-atk { background: #00ff66; }
+.pos-mid { background: #00a8ff; }
+.pos-def { background: #fbbf24; }
+.pos-gk { background: #ef4444; }
+
+.td-name {
+  color: #fff;
+  font-weight: bold;
+}
+
+.nation-code {
+  color: #666;
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.ovr-box, .pot-box {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #000;
+  font-weight: bold;
+}
